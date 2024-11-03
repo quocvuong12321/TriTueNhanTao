@@ -39,9 +39,10 @@ namespace GUI
             this.tsb_ThongTinGiangVien = new System.Windows.Forms.ToolStripButton();
             this.tsb_ThongTinLichThi = new System.Windows.Forms.ToolStripButton();
             this.tsb_XepLich = new System.Windows.Forms.ToolStripButton();
-            this.tsb_XuatBaoCao = new System.Windows.Forms.ToolStripButton();
             this.tsb_LichGacThi = new System.Windows.Forms.ToolStripButton();
+            this.tsb_XuatBaoCao = new System.Windows.Forms.ToolStripButton();
             this.tsb_Thoat = new System.Windows.Forms.ToolStripButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,18 +134,6 @@ namespace GUI
             this.tsb_XepLich.Text = "Xếp lịch";
             this.tsb_XepLich.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // tsb_XuatBaoCao
-            // 
-            this.tsb_XuatBaoCao.AutoSize = false;
-            this.tsb_XuatBaoCao.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsb_XuatBaoCao.Image = ((System.Drawing.Image)(resources.GetObject("tsb_XuatBaoCao.Image")));
-            this.tsb_XuatBaoCao.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsb_XuatBaoCao.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsb_XuatBaoCao.Name = "tsb_XuatBaoCao";
-            this.tsb_XuatBaoCao.Size = new System.Drawing.Size(197, 88);
-            this.tsb_XuatBaoCao.Text = "Xuất báo cáo";
-            this.tsb_XuatBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
             // tsb_LichGacThi
             // 
             this.tsb_LichGacThi.AutoSize = false;
@@ -157,6 +146,20 @@ namespace GUI
             this.tsb_LichGacThi.Size = new System.Drawing.Size(197, 88);
             this.tsb_LichGacThi.Text = "Lịch gác thi";
             this.tsb_LichGacThi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsb_LichGacThi.Click += new System.EventHandler(this.tsb_LichGacThi_Click);
+            // 
+            // tsb_XuatBaoCao
+            // 
+            this.tsb_XuatBaoCao.AutoSize = false;
+            this.tsb_XuatBaoCao.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsb_XuatBaoCao.Image = ((System.Drawing.Image)(resources.GetObject("tsb_XuatBaoCao.Image")));
+            this.tsb_XuatBaoCao.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsb_XuatBaoCao.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_XuatBaoCao.Name = "tsb_XuatBaoCao";
+            this.tsb_XuatBaoCao.Size = new System.Drawing.Size(197, 88);
+            this.tsb_XuatBaoCao.Text = "Xuất báo cáo";
+            this.tsb_XuatBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsb_XuatBaoCao.Click += new System.EventHandler(this.tsb_XuatBaoCao_Click);
             // 
             // tsb_Thoat
             // 
@@ -170,13 +173,22 @@ namespace GUI
             this.tsb_Thoat.Text = "Thoát";
             this.tsb_Thoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 91);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1245, 657);
+            this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1245, 748);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
-            this.IsMdiContainer = true;
             this.Name = "frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Xếp lịch gác thi";
@@ -203,6 +215,7 @@ namespace GUI
         private System.Windows.Forms.ToolStripButton tsb_XuatBaoCao;
         private System.Windows.Forms.ToolStripButton tsb_LichGacThi;
         private System.Windows.Forms.ToolStripButton tsb_Thoat;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
