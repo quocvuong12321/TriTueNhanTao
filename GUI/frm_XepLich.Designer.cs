@@ -36,6 +36,7 @@ namespace GUI
             this.dgv_XepLich = new System.Windows.Forms.DataGridView();
             this.ofd_DocFile = new System.Windows.Forms.OpenFileDialog();
             this.txt_Diem = new System.Windows.Forms.TextBox();
+            this.btn_XuatFileExcell = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_XepLich)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,11 +102,22 @@ namespace GUI
             this.txt_Diem.Size = new System.Drawing.Size(195, 22);
             this.txt_Diem.TabIndex = 5;
             // 
+            // btn_XuatFileExcell
+            // 
+            this.btn_XuatFileExcell.Location = new System.Drawing.Point(1599, 834);
+            this.btn_XuatFileExcell.Name = "btn_XuatFileExcell";
+            this.btn_XuatFileExcell.Size = new System.Drawing.Size(171, 67);
+            this.btn_XuatFileExcell.TabIndex = 6;
+            this.btn_XuatFileExcell.Text = "Xuất File";
+            this.btn_XuatFileExcell.UseVisualStyleBackColor = true;
+            this.btn_XuatFileExcell.Click += new System.EventHandler(this.btn_XuatFileExcell_Click);
+            // 
             // frm_XepLich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1828, 959);
+            this.Controls.Add(this.btn_XuatFileExcell);
             this.Controls.Add(this.txt_Diem);
             this.Controls.Add(this.dgv_XepLich);
             this.Controls.Add(this.txt_Path);
@@ -131,5 +143,6 @@ namespace GUI
         private System.Windows.Forms.DataGridView dgv_XepLich;
         private System.Windows.Forms.OpenFileDialog ofd_DocFile;
         private System.Windows.Forms.TextBox txt_Diem;
+        private System.Windows.Forms.Button btn_XuatFileExcell;
     }
 }

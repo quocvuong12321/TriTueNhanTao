@@ -19,6 +19,10 @@ namespace GUI
         public List<LichThiDTO> lstLichThi;
         public List<GiangVienDTO> lstGiangVien;
 
+
+        private List<string> Uniquecolumns;
+        private int[,] ketquaxep;
+
         public frm_XepLich()
         {
             InitializeComponent();
@@ -88,17 +92,31 @@ namespace GUI
 
         private void btn_XepLich_Click(object sender, EventArgs e)
         {
-            
+
+            //List<LichThiXepResult> lstKqXep = xlBLL.xepLichGacThi(lstLichThi, lstGiangVien);
+            //int[,] ketquaxep = xlBLL.chuyenDoiXepLichSangMang(lstKqXep, lstGiangVien);
+            //List<string> Uniquecolumns = lstKqXep.
+            //    OrderBy(t => t.LichThi.Ngay).ThenBy(t => t.LichThi.TietBatDau).
+            //    Select(kq => string.Format("{0:dd/MM/yy} {1}-{2}", kq.LichThi.Ngay, kq.LichThi.TietBatDau, kq.LichThi.TietKetThuc)).
+            //    Distinct().
+            //    ToList();
+
+            //dgv_XepLich.DataSource = null;
+
+            //HienThiLichThiTrenDataGridView(dgv_XepLich, ketquaxep, lstGiangVien, Uniquecolumns);
+
+
+
+            // Gán giá trị trực tiếp vào biến toàn cục thay vì khai báo lại
             List<LichThiXepResult> lstKqXep = xlBLL.xepLichGacThi(lstLichThi, lstGiangVien);
-            int[,] ketquaxep = xlBLL.chuyenDoiXepLichSangMang(lstKqXep, lstGiangVien);
-            List<string> Uniquecolumns = lstKqXep.
+            ketquaxep = xlBLL.chuyenDoiXepLichSangMang(lstKqXep, lstGiangVien);
+            Uniquecolumns = lstKqXep.
                 OrderBy(t => t.LichThi.Ngay).ThenBy(t => t.LichThi.TietBatDau).
-                Select(kq => string.Format("{0:dd/MM/yy} {1}-{2}", kq.LichThi.Ngay, kq.LichThi.TietBatDau, kq.LichThi.TietKetThuc)).
+                Select(kq => string.Format("{0:dd/MM/yyyy} {1}-{2}", kq.LichThi.Ngay, kq.LichThi.TietBatDau, kq.LichThi.TietKetThuc)).
                 Distinct().
                 ToList();
 
             dgv_XepLich.DataSource = null;
-
             HienThiLichThiTrenDataGridView(dgv_XepLich, ketquaxep, lstGiangVien, Uniquecolumns);
 
         }
@@ -134,6 +152,32 @@ namespace GUI
 
                 // Thêm hàng vào DataGridView
                 dgv.Rows.Add(row);
+            }
+        }
+
+        private void btn_XuatFileExcell_Click(object sender, EventArgs e)
+        {
+            if (Uniquecolumns == null || ketquaxep == null)
+            {
+                MessageBox.Show("Vui lòng xếp lịch trước khi xuất file Excel.");
+                return;
+            }
+
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                saveFileDialog.Title = "Chọn nơi lưu file";
+                saveFileDialog.FileName = "LichGacThi.xlsx"; // Tên mặc định
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
+
+                    XuatFileExcelBLL xuatFileBLL = new XuatFileExcelBLL();
+                    xuatFileBLL.XuatFileExcel(lstGiangVien, Uniquecolumns, ketquaxep, lstLichThi, filePath);
+
+                    MessageBox.Show($"Đã xuất file Excel thành công tại {filePath}");
+                }
             }
         }
     }

@@ -11,3 +11,9 @@ D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DTO\bin\Debug\DTO.pdb
 D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DTO\obj\Debug\DTO.dll
 D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DTO\obj\Debug\DTO.pdb
 D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\DTO\bin\Debug\DTO.dll
+C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\DTO\bin\Debug\DTO.pdb
+C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\DTO\obj\Debug\DTO.dll
+C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\DTO\obj\Debug\DTO.pdb
