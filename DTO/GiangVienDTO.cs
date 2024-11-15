@@ -48,33 +48,48 @@ namespace DTO
             return false;
 
         }
-
-        public int GetKhoangCachGanNhat(LichThiDTO lichthimoi)
+        public static int TinhKhoangCach(LichThiDTO lich1, LichThiDTO lich2)
         {
-            int khoangCachNganNhat = 1000;
-            foreach (var lichthi in LichGacThi)
+            // Khoảng cách theo ngày (số ngày giữa hai lịch thi)
+            int ngayKhoangCach = Math.Abs((lich1.Ngay - lich2.Ngay).Days);
+
+            // Khoảng cách theo tiết, chỉ tính nếu cùng ngày
+            int tietKhoangCach = 0;
+            if (lich1.Ngay == lich2.Ngay)
             {
-                // Nếu lịch mới bắt đầu sau lịch cũ, tính khoảng cách giữa lịch mới và lịch cũ
-                if (lichthimoi.Ngay ==lichthi.Ngay && lichthimoi.TietBatDau > lichthi.TietKetThuc)
+                if (lich1.TietKetThuc < lich2.TietBatDau)
                 {
-                    int khoangCach = lichthimoi.TietBatDau - lichthi.TietKetThuc;
-                    khoangCachNganNhat = Math.Min(khoangCach, khoangCachNganNhat);
+                    // Nếu lịch 1 kết thúc trước lịch 2 bắt đầu
+                    tietKhoangCach = lich2.TietBatDau - lich1.TietKetThuc;
                 }
-                // Nếu lịch mới kết thúc trước lịch cũ, tính khoảng cách giữa lịch mới và lịch cũ
-                else if (lichthimoi.Ngay == lichthi.Ngay && lichthimoi.TietKetThuc < lichthi.TietBatDau)
+                else if (lich2.TietKetThuc < lich1.TietBatDau)
                 {
-                    int khoangCach = lichthi.TietBatDau - lichthimoi.TietKetThuc;
-                    khoangCachNganNhat = Math.Min(khoangCach, khoangCachNganNhat);
+                    // Nếu lịch 2 kết thúc trước lịch 1 bắt đầu
+                    tietKhoangCach = lich1.TietBatDau - lich2.TietKetThuc;
                 }
-                // Nếu hai lịch trùng nhau hoặc liền kề (không có khoảng cách), đặt khoảng cách thành 0
                 else
                 {
-                    khoangCachNganNhat = 0;
-                    break;
+                    // Nếu hai lịch chồng chéo nhau
+                    tietKhoangCach = 0;
                 }
-
             }
-            return khoangCachNganNhat == 1000 ? 1000 : khoangCachNganNhat;
+
+            // Tổng hợp khoảng cách, với trọng số ngày (10) để ưu tiên khoảng cách theo ngày
+            return ngayKhoangCach * 5 + tietKhoangCach;
+        }
+
+        public int GetKhoangCachGanNhat(LichThiDTO lichthiMoi)
+        {
+            if (LichGacThi.Count == 0)
+            {
+                // Nếu giảng viên chưa có lịch gác thi, coi như khoảng cách là vô cực (ưu tiên cho việc nhận lịch mới).
+                return int.MaxValue;
+            }
+
+            // Tìm khoảng cách nhỏ nhất giữa lịch mới và các lịch gác thi đã có.
+            return LichGacThi
+                .Select(lichthi => TinhKhoangCach(lichthi, lichthiMoi))
+                .Min();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace BLL
         public XepLichDAL xlDAL = new XepLichDAL();
         public List<LichThiXepResult> xepLichGacThi(List<LichThiDTO> LstLichThi, List<GiangVienDTO> LstGiangVien)
         {
-            return xlDAL.xepLichGacThi(LstLichThi, LstGiangVien);
+            return xlDAL.xepLichGacThi(LstLichThi,LstGiangVien);
         }
 
         public int[,] chuyenDoiXepLichSangMang(List<LichThiXepResult> ketquaxeplich, List<GiangVienDTO> lstgiangvien)
@@ -20,6 +20,13 @@ namespace BLL
             return xlDAL.chuyenDoiXepLichSangMang(ketquaxeplich, lstgiangvien);
         }
 
-       
+        public static int DanhGiaLichThi(List<LichThiXepResult> danhSachKetQua)
+        {
+            return XepLichDAL.DanhGiaLichThi(danhSachKetQua);
+        }
+        public List<LichThiDTO> KiemTraXepHetChua()
+        {
+            return xlDAL.KiemTraXepHetChua();
+        }
     }
 }

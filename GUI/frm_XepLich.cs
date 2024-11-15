@@ -13,7 +13,6 @@ namespace GUI
 {
     public partial class frm_XepLich : Form
     {
-        GiangVienBLL gvBLL = new GiangVienBLL();
         XepLichBLL xlBLL = new XepLichBLL();
         LichThiBLL ltBLL = new LichThiBLL();
         public List<LichThiDTO> lstLichThi;
@@ -92,23 +91,9 @@ namespace GUI
 
         private void btn_XepLich_Click(object sender, EventArgs e)
         {
-
-            //List<LichThiXepResult> lstKqXep = xlBLL.xepLichGacThi(lstLichThi, lstGiangVien);
-            //int[,] ketquaxep = xlBLL.chuyenDoiXepLichSangMang(lstKqXep, lstGiangVien);
-            //List<string> Uniquecolumns = lstKqXep.
-            //    OrderBy(t => t.LichThi.Ngay).ThenBy(t => t.LichThi.TietBatDau).
-            //    Select(kq => string.Format("{0:dd/MM/yy} {1}-{2}", kq.LichThi.Ngay, kq.LichThi.TietBatDau, kq.LichThi.TietKetThuc)).
-            //    Distinct().
-            //    ToList();
-
-            //dgv_XepLich.DataSource = null;
-
-            //HienThiLichThiTrenDataGridView(dgv_XepLich, ketquaxep, lstGiangVien, Uniquecolumns);
-
-
-
             // Gán giá trị trực tiếp vào biến toàn cục thay vì khai báo lại
-            List<LichThiXepResult> lstKqXep = xlBLL.xepLichGacThi(lstLichThi, lstGiangVien);
+            var dsLichThi = lstLichThi.ToList();
+            List<LichThiXepResult> lstKqXep = xlBLL.xepLichGacThi(dsLichThi, lstGiangVien);
             ketquaxep = xlBLL.chuyenDoiXepLichSangMang(lstKqXep, lstGiangVien);
             Uniquecolumns = lstKqXep.
                 OrderBy(t => t.LichThi.Ngay).ThenBy(t => t.LichThi.TietBatDau).
@@ -119,6 +104,17 @@ namespace GUI
             dgv_XepLich.DataSource = null;
             HienThiLichThiTrenDataGridView(dgv_XepLich, ketquaxep, lstGiangVien, Uniquecolumns);
 
+            txt_Diem.Clear();
+            txt_Diem.Text = XepLichBLL.DanhGiaLichThi(lstKqXep).ToString() + " Điểm";
+
+            if(xlBLL.KiemTraXepHetChua().Count() > 0)
+            {
+                MessageBox.Show("Xếp lịch thành công, còn "+ xlBLL.KiemTraXepHetChua().Count().ToString()+ " lịch chưa xếp được");
+            }
+            else
+            {
+                MessageBox.Show("Xếp lịch thành công");
+            }
         }
 
         public void HienThiLichThiTrenDataGridView(DataGridView dgv, int[,] resultMatrix, List<GiangVienDTO> LstGiangVien, List<string> uniqueColumns)

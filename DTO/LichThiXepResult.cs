@@ -15,7 +15,6 @@ namespace DTO
             LichThi = lichThi;
             GiangViens = new List<GiangVienDTO>();
         }
-
-        
+       
     }
 }
