@@ -36,8 +36,6 @@ namespace GUI
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsb_ThongTinGiangVien = new System.Windows.Forms.ToolStripButton();
-            this.tsb_ThongTinLichThi = new System.Windows.Forms.ToolStripButton();
             this.tsb_XepLich = new System.Windows.Forms.ToolStripButton();
             this.tsb_LichGacThi = new System.Windows.Forms.ToolStripButton();
             this.tsb_XuatBaoCao = new System.Windows.Forms.ToolStripButton();
@@ -86,8 +84,6 @@ namespace GUI
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsb_ThongTinGiangVien,
-            this.tsb_ThongTinLichThi,
             this.tsb_XepLich,
             this.tsb_LichGacThi,
             this.tsb_XuatBaoCao,
@@ -97,30 +93,6 @@ namespace GUI
             this.toolStrip1.Size = new System.Drawing.Size(1245, 91);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsb_ThongTinGiangVien
-            // 
-            this.tsb_ThongTinGiangVien.AutoSize = false;
-            this.tsb_ThongTinGiangVien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsb_ThongTinGiangVien.Image = ((System.Drawing.Image)(resources.GetObject("tsb_ThongTinGiangVien.Image")));
-            this.tsb_ThongTinGiangVien.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsb_ThongTinGiangVien.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsb_ThongTinGiangVien.Name = "tsb_ThongTinGiangVien";
-            this.tsb_ThongTinGiangVien.Size = new System.Drawing.Size(197, 88);
-            this.tsb_ThongTinGiangVien.Text = "Thông tin giảng viên";
-            this.tsb_ThongTinGiangVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // tsb_ThongTinLichThi
-            // 
-            this.tsb_ThongTinLichThi.AutoSize = false;
-            this.tsb_ThongTinLichThi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsb_ThongTinLichThi.Image = ((System.Drawing.Image)(resources.GetObject("tsb_ThongTinLichThi.Image")));
-            this.tsb_ThongTinLichThi.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsb_ThongTinLichThi.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsb_ThongTinLichThi.Name = "tsb_ThongTinLichThi";
-            this.tsb_ThongTinLichThi.Size = new System.Drawing.Size(197, 88);
-            this.tsb_ThongTinLichThi.Text = "Thông tin lịch thi";
-            this.tsb_ThongTinLichThi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // tsb_XepLich
             // 
@@ -133,6 +105,7 @@ namespace GUI
             this.tsb_XepLich.Size = new System.Drawing.Size(197, 88);
             this.tsb_XepLich.Text = "Xếp lịch";
             this.tsb_XepLich.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsb_XepLich.Click += new System.EventHandler(this.tsb_XepLich_Click);
             // 
             // tsb_LichGacThi
             // 
@@ -209,8 +182,6 @@ namespace GUI
         private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
         private System.Windows.Forms.ToolStripContentPanel ContentPanel;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tsb_ThongTinGiangVien;
-        private System.Windows.Forms.ToolStripButton tsb_ThongTinLichThi;
         private System.Windows.Forms.ToolStripButton tsb_XepLich;
         private System.Windows.Forms.ToolStripButton tsb_XuatBaoCao;
         private System.Windows.Forms.ToolStripButton tsb_LichGacThi;

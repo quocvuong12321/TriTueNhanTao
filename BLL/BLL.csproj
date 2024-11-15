@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="GiangVienBLL.cs" />
+    <Compile Include="LichThiBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XepLichBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
@@ -53,6 +55,9 @@
       <Project>{daed2e49-b075-4102-a7b4-37ca91806255}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

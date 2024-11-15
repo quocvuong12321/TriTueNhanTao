@@ -1,12 +1,3 @@
-D:\Nam3\Do_An\Tri Tue Nhan Tao\XepLichGacThi\DAL\bin\Debug\DAL.dll
-D:\Nam3\Do_An\Tri Tue Nhan Tao\XepLichGacThi\DAL\bin\Debug\DAL.pdb
-D:\Nam3\Do_An\Tri Tue Nhan Tao\XepLichGacThi\DAL\bin\Debug\DTO.dll
-D:\Nam3\Do_An\Tri Tue Nhan Tao\XepLichGacThi\DAL\bin\Debug\DTO.pdb
-D:\Nam3\Do_An\Tri Tue Nhan Tao\XepLichGacThi\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
-D:\Nam3\Do_An\Tri Tue Nhan Tao\XepLichGacThi\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-D:\Nam3\Do_An\Tri Tue Nhan Tao\XepLichGacThi\DAL\obj\Debug\DAL.csproj.CopyComplete
-D:\Nam3\Do_An\Tri Tue Nhan Tao\XepLichGacThi\DAL\obj\Debug\DAL.dll
-D:\Nam3\Do_An\Tri Tue Nhan Tao\XepLichGacThi\DAL\obj\Debug\DAL.pdb
 C:\Users\ASUS\Desktop\testControlpanel\TriTueNhanTao\DAL\bin\Debug\DAL.dll
 C:\Users\ASUS\Desktop\testControlpanel\TriTueNhanTao\DAL\bin\Debug\DAL.pdb
 C:\Users\ASUS\Desktop\testControlpanel\TriTueNhanTao\DAL\bin\Debug\DTO.dll
@@ -16,3 +7,47 @@ C:\Users\ASUS\Desktop\testControlpanel\TriTueNhanTao\DAL\obj\Debug\DAL.csproj.Co
 C:\Users\ASUS\Desktop\testControlpanel\TriTueNhanTao\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\ASUS\Desktop\testControlpanel\TriTueNhanTao\DAL\obj\Debug\DAL.dll
 C:\Users\ASUS\Desktop\testControlpanel\TriTueNhanTao\DAL\obj\Debug\DAL.pdb
+D:\Nam3\Do_An\Tri Tue Nhan Tao\XepLichGacThi\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Nam3\Do_An\Tri Tue Nhan Tao\XepLichGacThi\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\DAL.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\DAL.pdb
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\DTO.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\System.Buffers.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\System.Memory.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\System.Numerics.Vectors.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\DTO.pdb
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\System.Buffers.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\System.Memory.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\System.Numerics.Vectors.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\obj\Debug\DAL.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\obj\Debug\DAL.pdb
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\DAL.dll.config
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\ClosedXML.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\ClosedXML.Parser.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\ExcelNumberFormat.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\RBush.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\SixLabors.Fonts.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\System.IO.Packaging.dll
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\ClosedXML.pdb
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\ClosedXML.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\ClosedXML.Parser.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\ExcelNumberFormat.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\RBush.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\SixLabors.Fonts.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\Nam3\Do_An\Tri_Tue_Nhan_Tao\XepLichGacThi\DAL\bin\Debug\System.IO.Packaging.xml

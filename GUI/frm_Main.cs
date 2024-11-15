@@ -41,5 +41,15 @@ namespace GUI
             us.Dock = DockStyle.Fill;
             panel1.Controls.Add(us);
         }
+
+        
+
+        private void tsb_XepLich_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Us_XepLichThi us = new Us_XepLichThi();
+            us.Dock = DockStyle.Fill;
+            panel1.Controls.Add(us);
+        }
     }
 }
