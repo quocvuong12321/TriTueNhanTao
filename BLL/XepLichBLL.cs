@@ -24,9 +24,9 @@ namespace BLL
         {
             return XepLichDAL.DanhGiaLichThi(danhSachKetQua);
         }
-        public List<LichThiDTO> KiemTraXepHetChua()
+        public List<LichThiDTO> LayDanhSachLichChuaXep()
         {
-            return xlDAL.KiemTraXepHetChua();
+            return xlDAL.LayDanhSachLichChuaXep();
         }
     }
 }

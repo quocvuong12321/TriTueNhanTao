@@ -15,34 +15,21 @@ namespace DAL
             using (var workbook = new XLWorkbook(path))
             {
                 var worksheet = workbook.Worksheet(1);
-                for (int colIndex = 5; colIndex <= worksheet.ColumnsUsed().Count() + 2; colIndex++)
+                for (int colIndex = 5; colIndex <= worksheet.ColumnsUsed().Count() ; colIndex++)
                 {
 
                     var column = worksheet.Column(colIndex);
-                    int ngayThi = int.Parse(column.Cell(3).Value.ToString());
-                    DateTime NgayThi;
-                    //string valueNgayThi = worksheet.Cell(column.Cell(2).Address).Value.ToString();
-                    if (ngayThi == 1)
-                    {
-                        NgayThi = new DateTime(2024, 11, 04);
-                    }
-                    else
-                    {
-                        NgayThi = new DateTime(2024, 11, 04).AddDays(ngayThi - 1);
-                    }
-                    string tiet = column.Cell(4).Value.ToString();
+                    DateTime ngayThi = DateTime.Parse(column.Cell(6).Value.ToString());
+                    string tiet = column.Cell(8).Value.ToString();
                     string[] tietRange = tiet.Split(new string[] { " → " }, StringSplitOptions.None);
                     int tietBatDau = int.Parse(tietRange[0]);
                     int tietKetThuc = int.Parse(tietRange[1]);
-                    int soGVCanCap = int.Parse(column.Cell(5).Value.ToString());
-                    LichThiDTO lt = new LichThiDTO(NgayThi, tietBatDau, tietKetThuc, soGVCanCap);
+                    int soGVCanCap = int.Parse(column.Cell(9).Value.ToString());
+                    LichThiDTO lt = new LichThiDTO(ngayThi, tietBatDau, tietKetThuc, soGVCanCap);
                     lstLichThi.Add(lt);
                 }
             }
             return lstLichThi;
         }
-
-
-
     }
 }

@@ -29,13 +29,35 @@ namespace DTO
         {
             foreach (var lichday in LichDay)
             {
-                if (lt.Ngay.ToShortDateString() == lichday.Ngay.ToShortDateString() && lt.TietBatDau >= lichday.TietBatDau && lt.TietKetThuc <= lichday.TietKetThuc)
+                if (lt.Ngay.Date == lichday.Ngay.Date)
                 {
-                    return false;
+                    if ((lichday.TietKetThuc >= lt.TietBatDau && lichday.TietKetThuc <= lt.TietKetThuc) ||
+                    (lt.TietKetThuc >= lichday.TietBatDau && lt.TietKetThuc <= lichday.TietKetThuc) ||
+                    (lichday.TietBatDau >= lt.TietBatDau && lichday.TietBatDau <= lt.TietKetThuc) ||
+                    (lt.TietBatDau >= lichday.TietBatDau && lt.TietBatDau <= lichday.TietKetThuc))
+                        return true;
                 }
-
             }
-            return true;
+            return false;
+        }
+
+        public bool KiemTraTrungLichThi(LichThiDTO lt2)
+        {
+            foreach (var lt1 in LichGacThi)
+            {
+                if (lt1.Ngay.Date == lt2.Ngay.Date)
+                {
+                    // Kiểm tra xem tiết học có chồng lấn hay không
+                    if ((lt1.TietKetThuc >= lt2.TietBatDau && lt1.TietKetThuc <= lt2.TietKetThuc) ||
+                        (lt2.TietKetThuc >= lt1.TietBatDau && lt2.TietKetThuc <= lt1.TietKetThuc) ||
+                        (lt1.TietBatDau >= lt2.TietBatDau && lt1.TietBatDau <= lt2.TietKetThuc) ||
+                        (lt2.TietBatDau >= lt1.TietBatDau && lt2.TietBatDau <= lt1.TietKetThuc))
+                    {
+                        return true;  // Nếu có chồng lấn, trả về true (lịch thi trùng)
+                    }
+                }
+            }
+            return false;  // Nếu không trùng lịch
         }
 
         public bool ThemLichGacThi(LichThiDTO lt, int SoLichGac)
@@ -46,8 +68,14 @@ namespace DTO
                 return true;
             }
             return false;
-
         }
+
+        public bool ThemLichGacThi(LichThiDTO lt)
+        {
+            LichGacThi.Add(lt);
+            return true;
+        }
+
         public static int TinhKhoangCach(LichThiDTO lich1, LichThiDTO lich2)
         {
             // Khoảng cách theo ngày (số ngày giữa hai lịch thi)

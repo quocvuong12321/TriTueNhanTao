@@ -74,9 +74,20 @@ namespace GUI
                 new GiangVienDTO("Nguyễn Văn An", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 04), 1, 5), new LichDayDTO(new DateTime(2024, 11, 06), 4, 6) }),
                 new GiangVienDTO("Phạm Thị Bình", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 05), 1, 3), new LichDayDTO(new DateTime(2024, 11, 09), 7, 9) }),
                 new GiangVienDTO("Đỗ Minh Hòa", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 06), 7, 11), new LichDayDTO(new DateTime(2024, 11, 08), 1, 3) }),
-                 new GiangVienDTO("Vũ Khắc Minh", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 07), 1, 3), new LichDayDTO(new DateTime(2024, 11, 05), 7, 9) }),
-                 new GiangVienDTO("Trần Thanh Tâm", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 08), 1, 5), new LichDayDTO(new DateTime(2024, 11, 06), 10, 12) }),
-                 new GiangVienDTO("Bùi Thị Lan", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 04), 7, 11), new LichDayDTO(new DateTime(2024, 11, 06), 1, 3) })
+                new GiangVienDTO("Vũ Khắc Minh", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 07), 1, 3), new LichDayDTO(new DateTime(2024, 11, 05), 7, 9) }),
+                new GiangVienDTO("Trần Thanh Tâm", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 08), 1, 5), new LichDayDTO(new DateTime(2024, 11, 06), 10, 12) }),
+                new GiangVienDTO("Bùi Thị Lan", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 04), 7, 11), new LichDayDTO(new DateTime(2024, 11, 06), 1, 3) }),
+
+                new GiangVienDTO("Nguyễn Thị Hoa", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 09), 1, 5), new LichDayDTO(new DateTime(2024, 11, 11), 7, 9) }),
+                new GiangVienDTO("Lê Văn Hưng", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 10), 4, 6), new LichDayDTO(new DateTime(2024, 11, 15), 10, 12) }),
+                new GiangVienDTO("Phạm Thị Hạnh", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 08), 7, 9), new LichDayDTO(new DateTime(2024, 11, 14), 1, 5) }),
+                new GiangVienDTO("Vũ Thành Nam", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 12), 1, 3), new LichDayDTO(new DateTime(2024, 11, 13), 7, 11) }),
+                new GiangVienDTO("Hoàng Minh Đức", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 07), 10, 12), new LichDayDTO(new DateTime(2024, 11, 09), 1, 3) }),
+                new GiangVienDTO("Đặng Ngọc Quân", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 10), 1, 5), new LichDayDTO(new DateTime(2024, 11, 13), 7, 9) }),
+                new GiangVienDTO("Nguyễn Hải Anh", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 06), 4, 6), new LichDayDTO(new DateTime(2024, 11, 14), 10, 12) }),
+                new GiangVienDTO("Trần Văn Hùng", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 11), 1, 3), new LichDayDTO(new DateTime(2024, 11, 16), 7, 9) }),
+                new GiangVienDTO("Ngô Bích Ngọc", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 05), 7, 9), new LichDayDTO(new DateTime(2024, 11, 12), 1, 5) }),
+                new GiangVienDTO("Đinh Thị Tuyết", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 08), 1, 3), new LichDayDTO(new DateTime(2024, 11, 15), 7, 11) }),
              };
 
             MessageBox.Show("Thành công");
@@ -107,9 +118,9 @@ namespace GUI
             txt_Diem.Clear();
             txt_Diem.Text = XepLichBLL.DanhGiaLichThi(lstKqXep).ToString() + " Điểm";
 
-            if(xlBLL.KiemTraXepHetChua().Count() > 0)
+            if(xlBLL.LayDanhSachLichChuaXep().Count() > 0)
             {
-                MessageBox.Show("Xếp lịch thành công, còn "+ xlBLL.KiemTraXepHetChua().Count().ToString()+ " lịch chưa xếp được");
+                MessageBox.Show("Xếp lịch thành công, còn "+ xlBLL.LayDanhSachLichChuaXep().Count().ToString()+ " lịch chưa xếp được");
             }
             else
             {

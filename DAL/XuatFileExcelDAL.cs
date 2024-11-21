@@ -31,7 +31,7 @@ namespace DAL
                 int startCol = 2;
                 string previousDate = "";
                 int mergeStartCol = startCol;
-
+                
                 for (int i = 0; i < uniqueColumns.Count; i++)
                 {
                     string[] parts = uniqueColumns[i].Split(' ');
@@ -74,7 +74,7 @@ namespace DAL
                     int soCaChuaCap = soCaCanCap - soCaDaCap;
 
                     worksheet.Cell(8, startCol + i).Value = soCaDaCap;
-                    worksheet.Cell(9, startCol + i).Value = soCaChuaCap;
+                    worksheet.Cell(9, startCol + i).Value = Math.Abs(soCaChuaCap);
                 }
 
                 // Đổ dữ liệu giảng viên và lịch gác thi vào các hàng

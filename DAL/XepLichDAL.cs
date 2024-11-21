@@ -10,21 +10,24 @@ namespace DAL
     public class XepLichDAL
     {
         List<LichThiDTO> Cathichuaxep;
+        List<LichThiXepResult> ketquaxeplich;
         public List<LichThiXepResult> xepLichGacThi(List<LichThiDTO> LstLichThi,List<GiangVienDTO> LstGiangVien)
         {
-            List<LichThiXepResult> ketquaxeplich = new List<LichThiXepResult>();
+            /*List<LichThiXepResult>*/ ketquaxeplich = new List<LichThiXepResult>();
             List<LichThiDTO> Cathidaxep = new List<LichThiDTO>();
             Cathichuaxep = new List<LichThiDTO>();
             //Chiến lượt sắp xếp heuristic cho LichThi
             //OrderByDescending(t => t.SoGVCanCap).ThenBy(t => t.Ngay).
             //OrderBy(t=>t.Ngay).ThenByDescending(t=>t.SoGVCanCap).
-            List<LichThiDTO> danhsachlichthi = LstLichThi.OrderByDescending(t => t.SoGVCanCap).ThenBy(t => t.Ngay).ToList();
+            List<LichThiDTO> danhsachlichthi = LstLichThi.OrderByDescending(t => t.SoGVCanCap).ThenBy(t=>t.Ngay).ThenBy(t=>t.TietBatDau).ThenBy(t=>t.TietKetThuc).ToList();
             int Solichtoida = danhsachlichthi.Sum(t => t.SoGVCanCap) / LstGiangVien.Count() + 1;
             foreach (LichThiDTO lichthi in danhsachlichthi)
             {
-                int sogvdaxep = 0;
+                //int sogvdaxep = 0;
                 //Chiến lượt sắp xếp heuristic cho giảng viên
                 var sortedgiangvien = LstGiangVien
+                    .Where(gv=>gv.KiemTraTrungLichDay(lichthi) == false)
+                    .Where(gv=>gv.KiemTraTrungLichThi(lichthi)==false)
                     .OrderBy(gv => gv.GetKhoangCachGanNhat(lichthi))
                     .ThenBy(gv => gv.LichGacThi.Count())
                     .ToList();
@@ -35,7 +38,7 @@ namespace DAL
                     if (lichthi.SoGVCanCap == 0) break;
                     if (giangvien.ThemLichGacThi(lichthi, Solichtoida))
                     {
-                        sogvdaxep++;
+                        //sogvdaxep++;
                         ketqua.GiangViens.Add(giangvien);
                         lichthi.SoGVCanCap--;
                     }
@@ -48,6 +51,9 @@ namespace DAL
                 }
             }
             Cathichuaxep = LstLichThi.Except(Cathidaxep).ToList();
+
+            bool kq = XepLichBacktracking(Cathichuaxep, LstGiangVien, Solichtoida);
+
             return ketquaxeplich;
         }
 
@@ -101,13 +107,70 @@ namespace DAL
             return tongDiem; // Điểm càng thấp càng tốt
         }
 
-        public List<LichThiDTO> KiemTraXepHetChua()
+        public List<LichThiDTO> LayDanhSachLichChuaXep()
         {
             if (Cathichuaxep.Count() > 0)
             {
                 return Cathichuaxep;
             }
             return new List<LichThiDTO>();
+        }
+
+        public bool XepLichBacktracking(List<LichThiDTO> Cathichuaxep, List<GiangVienDTO> LstGiangVien, int Solichtoida)
+        {
+            // Kiểm tra nếu không còn ca thi nào cần xếp
+            if (Cathichuaxep.Count == 0)
+                return true; // Nếu không còn ca thi, tức là đã xếp xong
+
+            // Lấy ca thi đầu tiên trong danh sách
+            LichThiDTO lichthi = Cathichuaxep[0];
+
+            // Lọc giảng viên có thể xếp cho ca thi này
+            var sortedGiangVien = LstGiangVien
+                .Where(gv => gv.KiemTraTrungLichThi(lichthi) == false) // Kiểm tra xem giảng viên có lịch thi trùng không
+                .Where(gv => gv.KiemTraTrungLichDay(lichthi) == false) // Kiểm tra xem giảng viên có lịch dạy trùng không
+                .OrderBy(gv => gv.GetKhoangCachGanNhat(lichthi)) // Chọn giảng viên gần nhất với ca thi
+                .ThenBy(gv => gv.LichGacThi.Count()) // Giảng viên ít lịch nhất sẽ được ưu tiên
+                .ToList();
+
+            // Thử từng giảng viên để xếp lịch
+            foreach (var giangvien in sortedGiangVien)
+            {
+                if (lichthi.SoGVCanCap > 0)
+                {
+                    // Thử xếp ca thi cho giảng viên
+                    if (giangvien.ThemLichGacThi(lichthi))
+                    {
+                        // Nếu thành công, giảm số lượng giảng viên cần thiết cho ca thi này
+                        lichthi.SoGVCanCap--;
+
+                        var kq = ketquaxeplich.FirstOrDefault(t => t.LichThi == lichthi);
+                        if (kq != null)
+                        {
+                            kq.GiangViens.Add(giangvien);
+                        }
+                        else
+                        {
+                            LichThiXepResult kq1 = new LichThiXepResult(lichthi);
+                            kq1.GiangViens.Add(giangvien);
+                            ketquaxeplich.Add(kq1);
+                        }
+                        Cathichuaxep.RemoveAt(0);
+                        // Đệ quy tiếp tục thử xếp lịch cho ca thi tiếp theo trong danh sách
+                        if (XepLichBacktracking(Cathichuaxep.Skip(1).ToList(), LstGiangVien, Solichtoida))
+                        {
+                            return true; // Nếu xếp lịch thành công cho tất cả các ca thi còn lại
+                        }
+
+                        // Nếu không thành công, quay lại và thử giảng viên khác
+                        giangvien.LichGacThi.Remove(lichthi);// Xóa lịch thi đã thử gán
+                        lichthi.SoGVCanCap++; // Khôi phục lại số giảng viên cần thiết cho ca thi này
+                    }
+
+                }
+            }
+            // Nếu không thể xếp lịch cho ca thi này với bất kỳ giảng viên nào, trả về false
+            return false;
         }
     }
 }
