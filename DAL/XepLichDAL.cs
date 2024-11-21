@@ -26,8 +26,8 @@ namespace DAL
                 //int sogvdaxep = 0;
                 //Chiến lượt sắp xếp heuristic cho giảng viên
                 var sortedgiangvien = LstGiangVien
-                    .Where(gv=>gv.KiemTraTrungLichDay(lichthi) == false)
                     .Where(gv=>gv.KiemTraTrungLichThi(lichthi)==false)
+                    .Where(gv=>gv.KiemTraTrungLichDay(lichthi) == false)
                     .OrderBy(gv => gv.GetKhoangCachGanNhat(lichthi))
                     .ThenBy(gv => gv.LichGacThi.Count())
                     .ToList();
@@ -52,7 +52,7 @@ namespace DAL
             }
             Cathichuaxep = LstLichThi.Except(Cathidaxep).ToList();
 
-            bool kq = XepLichBacktracking(Cathichuaxep, LstGiangVien, Solichtoida);
+           bool kq = XepLichBacktracking(LstGiangVien, Solichtoida);
 
             return ketquaxeplich;
         }
@@ -116,7 +116,7 @@ namespace DAL
             return new List<LichThiDTO>();
         }
 
-        public bool XepLichBacktracking(List<LichThiDTO> Cathichuaxep, List<GiangVienDTO> LstGiangVien, int Solichtoida)
+        public bool XepLichBacktracking(List<GiangVienDTO> LstGiangVien, int Solichtoida)
         {
             // Kiểm tra nếu không còn ca thi nào cần xếp
             if (Cathichuaxep.Count == 0)
@@ -129,8 +129,8 @@ namespace DAL
             var sortedGiangVien = LstGiangVien
                 .Where(gv => gv.KiemTraTrungLichThi(lichthi) == false) // Kiểm tra xem giảng viên có lịch thi trùng không
                 .Where(gv => gv.KiemTraTrungLichDay(lichthi) == false) // Kiểm tra xem giảng viên có lịch dạy trùng không
-                .OrderBy(gv => gv.GetKhoangCachGanNhat(lichthi)) // Chọn giảng viên gần nhất với ca thi
-                .ThenBy(gv => gv.LichGacThi.Count()) // Giảng viên ít lịch nhất sẽ được ưu tiên
+                .OrderBy(gv => gv.LichGacThi.Count()) // Giảng viên ít lịch nhất sẽ được ưu tiên
+                .ThenBy(gv => gv.GetKhoangCachGanNhat(lichthi)) // Chọn giảng viên gần nhất với ca thi
                 .ToList();
 
             // Thử từng giảng viên để xếp lịch
@@ -155,9 +155,10 @@ namespace DAL
                             kq1.GiangViens.Add(giangvien);
                             ketquaxeplich.Add(kq1);
                         }
-                        Cathichuaxep.RemoveAt(0);
+                        if (lichthi.SoGVCanCap == 0)
+                            Cathichuaxep.Remove(lichthi);
                         // Đệ quy tiếp tục thử xếp lịch cho ca thi tiếp theo trong danh sách
-                        if (XepLichBacktracking(Cathichuaxep.Skip(1).ToList(), LstGiangVien, Solichtoida))
+                        if (XepLichBacktracking(LstGiangVien, Solichtoida))
                         {
                             return true; // Nếu xếp lịch thành công cho tất cả các ca thi còn lại
                         }
