@@ -102,13 +102,11 @@ C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\bin\Debug
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\obj\Debug\GUI.frm_Main.resources
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\obj\Debug\GUI.frm_XepLich.resources
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\obj\Debug\GUI.Properties.Resources.resources
-C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\obj\Debug\GUI.Us_LichGacThi.resources
-C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\obj\Debug\GUI.Us_XepLichThi.resources
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\obj\Debug\GUI.exe
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\obj\Debug\GUI.pdb
+C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\GUI\bin\Debug\Images\logo.png

@@ -93,3 +93,4 @@ C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\DAL\obj\Debug
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\DAL\obj\Debug\DAL.dll
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\DAL\obj\Debug\DAL.pdb
+C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\DAL\bin\Debug\Images\logo.png

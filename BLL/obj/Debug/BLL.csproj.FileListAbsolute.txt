@@ -86,3 +86,4 @@ C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\BLL\obj\Debug
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\BLL\obj\Debug\BLL.dll
 C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\BLL\obj\Debug\BLL.pdb
+C:\Users\ASUS\Desktop\Tri_Tue_Nhan_Tao\Do_An_Cuoi_Ky\TriTueNhanTao\BLL\bin\Debug\Images\logo.png
