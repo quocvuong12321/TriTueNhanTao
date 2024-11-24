@@ -59,7 +59,7 @@ namespace DAL
                     // Tìm số ca gác thi cần cấp từ danh sách lstLichThi dựa trên ngày và tiết
                     var lichThi = lstLichThi.FirstOrDefault(lt => lt.Ngay == date && $"{lt.TietBatDau}-{lt.TietKetThuc}" == tietString);
                     int soCaCanCap = lichThi?.SoGVCanCap ?? 0;
-
+                    
                     worksheet.Cell(7, startCol + i).Value = soCaCanCap;
 
                     // Tính toán số ca gác thi đã cấp và chưa cấp
