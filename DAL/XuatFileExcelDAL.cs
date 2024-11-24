@@ -57,7 +57,6 @@ namespace DAL
                 worksheet.Cell(13, 1).Value = "Số ca gác thi cần cấp";
                 worksheet.Cell(14, 1).Value = "Số ca gác thi đã cấp";
                 worksheet.Cell(15, 1).Value = "Số ca gác thi chưa cấp";
-
                 // Định dạng tiêu đề hàng dọc và thêm border
                 for (int i = 10; i <= 15; i++)
                 {
@@ -65,9 +64,13 @@ namespace DAL
                         .Alignment.SetVertical(XLAlignmentVerticalValues.Center)
                         .Font.SetBold(true)
                         .Border.SetOutsideBorder(XLBorderStyleValues.Thin);
+                    worksheet.Cell(i, 2).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center)
+                        .Alignment.SetVertical(XLAlignmentVerticalValues.Center)
+                        .Font.SetBold(true)
+                        .Border.SetOutsideBorder(XLBorderStyleValues.Thin);
                 }
 
-                int startCol = 2;
+                int startCol = 3;
                 string previousDate = "";
                 int mergeStartCol = startCol;
 
@@ -141,12 +144,18 @@ namespace DAL
                 worksheet.Column(1).Width = 20; // Đặt chiều rộng đủ lớn cho nội dung
 
 
-                // Dữ liệu giảng viên bắt đầu từ hàng 16
-                int startRow = 16;
+                // Dữ liệu giảng viên bắt đầu từ hàng 17
+                int startRow = 17;
                 for (int i = 0; i < lstGiangVien.Count; i++)
                 {
+                    int Tonglichgac = lstGiangVien[i].LichGacThi.Count();
+                    worksheet.Cell(startRow + i, 2).Value = Tonglichgac;
+                    worksheet.Cell(startRow + i, 2).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center)
+                        .Alignment.SetVertical(XLAlignmentVerticalValues.Center)
+                        .Border.SetOutsideBorder(XLBorderStyleValues.Thin);
                     worksheet.Cell(startRow + i, 1).Value = lstGiangVien[i].TenGiangVien;
-                    worksheet.Cell(startRow + i, 1).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center)
+                    //.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center)
+                    worksheet.Cell(startRow + i, 1).Style
                         .Alignment.SetVertical(XLAlignmentVerticalValues.Center)
                         .Border.SetOutsideBorder(XLBorderStyleValues.Thin);
 

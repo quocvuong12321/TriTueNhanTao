@@ -11,25 +11,23 @@ namespace DAL
     {
         List<LichThiDTO> Cathichuaxep;
         List<LichThiXepResult> ketquaxeplich;
-        public List<LichThiXepResult> xepLichGacThi(List<LichThiDTO> LstLichThi,List<GiangVienDTO> LstGiangVien)
+        public List<LichThiXepResult> xepLichGacThi(List<LichThiDTO> LstLichThi, List<GiangVienDTO> LstGiangVien)
         {
-            /*List<LichThiXepResult>*/ ketquaxeplich = new List<LichThiXepResult>();
+            ketquaxeplich = new List<LichThiXepResult>();
             List<LichThiDTO> Cathidaxep = new List<LichThiDTO>();
             Cathichuaxep = new List<LichThiDTO>();
             //Chiến lượt sắp xếp heuristic cho LichThi
-            //OrderByDescending(t => t.SoGVCanCap).ThenBy(t => t.Ngay).
-            //OrderBy(t=>t.Ngay).ThenByDescending(t=>t.SoGVCanCap).
-            List<LichThiDTO> danhsachlichthi = LstLichThi.OrderByDescending(t => t.SoGVCanCap).ThenBy(t=>t.Ngay).ThenBy(t=>t.TietBatDau).ThenBy(t=>t.TietKetThuc).ToList();
+            List<LichThiDTO> danhsachlichthi = LstLichThi.OrderByDescending(t => t.SoGVCanCap).ThenBy(t => t.Ngay).ThenBy(t => t.TietBatDau).ThenBy(t => t.TietKetThuc).ToList();
             int Solichtoida = danhsachlichthi.Sum(t => t.SoGVCanCap) / LstGiangVien.Count() + 1;
             foreach (LichThiDTO lichthi in danhsachlichthi)
             {
                 //int sogvdaxep = 0;
                 //Chiến lượt sắp xếp heuristic cho giảng viên
                 var sortedgiangvien = LstGiangVien
-                    .Where(gv=>gv.KiemTraTrungLichThi(lichthi)==false)
-                    .Where(gv=>gv.KiemTraTrungLichDay(lichthi) == false)
-                    .OrderBy(gv => gv.GetKhoangCachGanNhat(lichthi))
-                    .ThenBy(gv => gv.LichGacThi.Count())
+                    .Where(gv => gv.KiemTraTrungLichDay(lichthi) == false)
+                    .Where(gv => gv.KiemTraTrungLichThi(lichthi) == false)
+                    .OrderBy(gv => gv.LichGacThi.Count())
+                    .ThenBy(gv => gv.GetKhoangCachGanNhat(lichthi))
                     .ToList();
 
                 var ketqua = new LichThiXepResult(lichthi);
@@ -42,7 +40,7 @@ namespace DAL
                         ketqua.GiangViens.Add(giangvien);
                         lichthi.SoGVCanCap--;
                     }
-                   
+
                 }
                 if (lichthi.SoGVCanCap == 0)
                 {
@@ -52,16 +50,16 @@ namespace DAL
             }
             Cathichuaxep = LstLichThi.Except(Cathidaxep).ToList();
 
-           bool kq = XepLichBacktracking(LstGiangVien, Solichtoida);
+            bool kq = XepLichBacktracking(LstGiangVien, Solichtoida);
 
             return ketquaxeplich;
         }
 
-        public int[,] chuyenDoiXepLichSangMang(List<LichThiXepResult> ketquaxeplich,List<GiangVienDTO> lstgiangvien)
+        public int[,] chuyenDoiXepLichSangMang(List<LichThiXepResult> ketquaxeplich, List<GiangVienDTO> lstgiangvien)
         {
             var Uniquecolumns = ketquaxeplich.
-                OrderBy(t=>t.LichThi.Ngay).
-                ThenBy(t=>t.LichThi.TietBatDau).
+                OrderBy(t => t.LichThi.Ngay).
+                ThenBy(t => t.LichThi.TietBatDau).
                 Select(kq => new { kq.LichThi.Ngay, kq.LichThi.TietBatDau, kq.LichThi.TietKetThuc }).
                 ToList();
 
@@ -72,13 +70,13 @@ namespace DAL
             // 2. Khởi tạo mảng 2 chiều với số hàng là số giảng viên và số cột là số lịch thi duy nhất
             int[,] resultMatrix = new int[lstgiangvien.Count, Uniquecolumns.Count];
 
-            foreach(var kq in ketquaxeplich)
+            foreach (var kq in ketquaxeplich)
             {
                 var lich = new { kq.LichThi.Ngay, kq.LichThi.TietBatDau, kq.LichThi.TietKetThuc };
 
                 int columnindex = columnIndexMap[lich];
 
-                foreach(var gv in kq.GiangViens)
+                foreach (var gv in kq.GiangViens)
                 {
                     int rowIndex = lstgiangvien.IndexOf(gv);
                     resultMatrix[rowIndex, columnindex] = 1;
@@ -127,10 +125,9 @@ namespace DAL
 
             // Lọc giảng viên có thể xếp cho ca thi này
             var sortedGiangVien = LstGiangVien
-                .Where(gv => gv.KiemTraTrungLichThi(lichthi) == false) // Kiểm tra xem giảng viên có lịch thi trùng không
-                .Where(gv => gv.KiemTraTrungLichDay(lichthi) == false) // Kiểm tra xem giảng viên có lịch dạy trùng không
-                .OrderBy(gv => gv.LichGacThi.Count()) // Giảng viên ít lịch nhất sẽ được ưu tiên
-                .ThenBy(gv => gv.GetKhoangCachGanNhat(lichthi)) // Chọn giảng viên gần nhất với ca thi
+                .Where(gv => gv.KiemTraTrungLichDay(lichthi) == false && gv.KiemTraTrungLichThi(lichthi) == false)
+                //.OrderBy(gv => gv.LichGacThi.Count()) // Giảng viên ít lịch nhất sẽ được ưu tiên
+                //.ThenBy(gv => gv.GetKhoangCachGanNhat(lichthi)) // Chọn giảng viên gần nhất với ca thi
                 .ToList();
 
             // Thử từng giảng viên để xếp lịch

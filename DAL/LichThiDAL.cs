@@ -19,13 +19,30 @@ namespace DAL
                 {
 
                     var column = worksheet.Column(colIndex);
-                    DateTime ngayThi = DateTime.Parse(column.Cell(6).Value.ToString());
+                    DateTime lastDate = new DateTime();
+                    string getvaluelastdate;
+
+                    var mergedRange = worksheet.MergedRanges.FirstOrDefault(r => r.Contains(column.Cell(6).Address.ToString()));
+
+                    if (mergedRange != null)
+                    {
+                        getvaluelastdate = mergedRange.FirstCell().GetValue<string>();
+                    }
+                    else
+                    {
+                        getvaluelastdate = column.Cell(6).GetValue<string>();
+                    }
+
+                    if (!string.IsNullOrEmpty(getvaluelastdate))
+                    {
+                        lastDate = DateTime.Parse(getvaluelastdate);
+                    }
                     string tiet = column.Cell(8).Value.ToString();
                     string[] tietRange = tiet.Split(new string[] { " → " }, StringSplitOptions.None);
                     int tietBatDau = int.Parse(tietRange[0]);
                     int tietKetThuc = int.Parse(tietRange[1]);
                     int soGVCanCap = int.Parse(column.Cell(9).Value.ToString());
-                    LichThiDTO lt = new LichThiDTO(ngayThi, tietBatDau, tietKetThuc, soGVCanCap);
+                    LichThiDTO lt = new LichThiDTO(lastDate, tietBatDau, tietKetThuc, soGVCanCap);
                     lstLichThi.Add(lt);
                 }
             }

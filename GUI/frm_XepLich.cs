@@ -15,6 +15,7 @@ namespace GUI
     {
         XepLichBLL xlBLL = new XepLichBLL();
         LichThiBLL ltBLL = new LichThiBLL();
+        GiangVienBLL gvBLL = new GiangVienBLL();
         public List<LichThiDTO> lstLichThi;
         public List<GiangVienDTO> lstGiangVien;
 
@@ -65,44 +66,17 @@ namespace GUI
 
         private void btn_LoadGiangVien_Click(object sender, EventArgs e)
         {
-            lstGiangVien = new List<GiangVienDTO>()
-            {
-                new GiangVienDTO("Phùng Thế Bảo", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 05), 1, 3) }),
-                new GiangVienDTO("Ngô Dương Hà", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 04), 7, 11) }),
-                new GiangVienDTO("Lê Hồng Sơn", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 06), 4, 6), new LichDayDTO(new DateTime(2024, 11, 06), 7, 9) }),
-                new GiangVienDTO("Trần Thị Mai", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 05), 1, 5), new LichDayDTO(new DateTime(2024, 11, 08), 7, 9) }),
-                new GiangVienDTO("Nguyễn Văn An", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 04), 1, 5), new LichDayDTO(new DateTime(2024, 11, 06), 4, 6) }),
-                new GiangVienDTO("Phạm Thị Bình", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 05), 1, 3), new LichDayDTO(new DateTime(2024, 11, 09), 7, 9) }),
-                new GiangVienDTO("Đỗ Minh Hòa", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 06), 7, 11), new LichDayDTO(new DateTime(2024, 11, 08), 1, 3) }),
-                new GiangVienDTO("Vũ Khắc Minh", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 07), 1, 3), new LichDayDTO(new DateTime(2024, 11, 05), 7, 9) }),
-                new GiangVienDTO("Trần Thanh Tâm", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 08), 1, 5), new LichDayDTO(new DateTime(2024, 11, 06), 10, 12) }),
-                new GiangVienDTO("Bùi Thị Lan", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 04), 7, 11), new LichDayDTO(new DateTime(2024, 11, 06), 1, 3) }),
-
-                new GiangVienDTO("Nguyễn Thị Hoa", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 09), 1, 5), new LichDayDTO(new DateTime(2024, 11, 11), 7, 9) }),
-                new GiangVienDTO("Lê Văn Hưng", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 10), 4, 6), new LichDayDTO(new DateTime(2024, 11, 15), 10, 12) }),
-                new GiangVienDTO("Phạm Thị Hạnh", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 08), 7, 9), new LichDayDTO(new DateTime(2024, 11, 14), 1, 5) }),
-                new GiangVienDTO("Vũ Thành Nam", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 12), 1, 3), new LichDayDTO(new DateTime(2024, 11, 13), 7, 11) }),
-                new GiangVienDTO("Hoàng Minh Đức", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 07), 10, 12), new LichDayDTO(new DateTime(2024, 11, 09), 1, 3) }),
-                new GiangVienDTO("Đặng Ngọc Quân", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 10), 1, 5), new LichDayDTO(new DateTime(2024, 11, 13), 7, 9) }),
-                new GiangVienDTO("Nguyễn Hải Anh", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 06), 4, 6), new LichDayDTO(new DateTime(2024, 11, 14), 10, 12) }),
-                new GiangVienDTO("Trần Văn Hùng", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 11), 1, 3), new LichDayDTO(new DateTime(2024, 11, 16), 7, 9) }),
-                new GiangVienDTO("Ngô Bích Ngọc", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 05), 7, 9), new LichDayDTO(new DateTime(2024, 11, 12), 1, 5) }),
-                new GiangVienDTO("Đinh Thị Tuyết", new List<LichDayDTO> { new LichDayDTO(new DateTime(2024, 11, 08), 1, 3), new LichDayDTO(new DateTime(2024, 11, 15), 7, 11) }),
-             };
-
+            string path = DocFileDialog(ofd_DocFile);
+            txt_Path.Clear();
+            txt_Path.Text = path;
+            lstGiangVien = gvBLL.LoadFileGiangVien(path);
+            dgv_XepLich.DataSource = null;
+            dgv_XepLich.DataSource = lstGiangVien;
             MessageBox.Show("Thành công");
-
-            //string path = DocFileDialog(ofd_DocFile);
-            //txt_Path.Clear();
-            //txt_Path.Text = path;
-            //lstGiangVien = gvBLL.LoadFileGiangVien(path);
-            //dgv_XepLich.DataSource = null;
-            //dgv_XepLich.DataSource = lstGiangVien;
         }
 
         private void btn_XepLich_Click(object sender, EventArgs e)
         {
-            // Gán giá trị trực tiếp vào biến toàn cục thay vì khai báo lại
             List<LichThiDTO> dsLichThi = lstLichThi
                 .Select(lich => new LichThiDTO(lich.Ngay, lich.TietBatDau, lich.TietKetThuc, lich.SoGVCanCap))
                 .ToList(); 

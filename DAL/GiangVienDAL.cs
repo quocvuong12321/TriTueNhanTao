@@ -15,27 +15,48 @@ namespace DAL
             using (var workbook = new XLWorkbook(path))
             {
                 var worksheet = workbook.Worksheet(1);
-                for(int i = 9; i <= worksheet.RowsUsed().Count();i++)
+                for (int i = 10; i <= worksheet.RowsUsed().Count(); i++)
                 {
+                    int j = 5;
                     var row = worksheet.Row(i);
-                    string tengiangvien = row.Cell(10).Value.ToString();
-                    DateTime ngay = DateTime.Parse(worksheet.Row(8).Cell(1).Value.ToString());
-                    string valueTiet = row.Cell(9).Value.ToString();
-                    string[] arrTiet = valueTiet.Split(new string[] { " → " }, StringSplitOptions.None);
-                    int tietbatdau = int.Parse(arrTiet[0]);
-                    int tietketthuc = int.Parse(arrTiet[1]);
-                    GiangVienDTO gv = lstGiangVien.FirstOrDefault(t => t.TenGiangVien.Equals(tengiangvien));
-                    if(gv!= null)
+                    string tengiangvien = row.Cell(2).Value.ToString();
+                    var rowtiet = worksheet.Row(6);
+                    GiangVienDTO gv = new GiangVienDTO(tengiangvien);
+                    int count = row.Cells().Count();
+                    while (j <= count)
                     {
-                        gv.LichDay.Add(new LichDayDTO(ngay, tietbatdau, tietketthuc));
+                        if (rowtiet.Cell(j).Value.ToString() == "end")
+                            break;
+                        if (row.Cell(j).Value.ToString() == "x")
+                        {
+                            DateTime lastDate = new DateTime();
+                            string getvaluelastdate;
+
+                            var mergedRange = worksheet.MergedRanges.FirstOrDefault(r => r.Contains(rowtiet.Cell(j).Address.ToString()));
+
+                            if (mergedRange != null)
+                            {
+                                getvaluelastdate = mergedRange.FirstCell().GetValue<string>();
+                            }
+                            else
+                            {
+                                getvaluelastdate = rowtiet.Cell(j).GetValue<string>();
+                            }
+
+                            if (!string.IsNullOrEmpty(getvaluelastdate))
+                            {
+                                lastDate = DateTime.Parse(getvaluelastdate);
+                            }
+                            string valueTiet = worksheet.Row(8).Cell(j).Value.ToString();
+                            string[] arrTiet = valueTiet.Split(new string[] { "→" }, StringSplitOptions.None);
+                            int tietbatdau = int.Parse(arrTiet[0]);
+                            int tietketthuc = int.Parse(arrTiet[1]);
+                            LichDayDTO ld = new LichDayDTO(lastDate, tietbatdau, tietketthuc);
+                            gv.LichDay.Add(ld);
+                        }
+                        j++;
                     }
-                    else
-                    {
-                        LichDayDTO newld = new LichDayDTO(ngay, tietbatdau, tietketthuc);
-                        GiangVienDTO newgv = new GiangVienDTO(tengiangvien);
-                        newgv.LichDay.Add(newld);
-                        lstGiangVien.Add(newgv);
-                    }
+                    lstGiangVien.Add(gv);
                 }
             }
             return lstGiangVien;
