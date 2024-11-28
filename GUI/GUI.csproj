@@ -96,6 +96,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+>>>>>>> 4c07c304ad03f865dcde11fdc90d95de7fbccfdd
     <None Include="Resources\icons8-lecturer-100.png" />
   </ItemGroup>
   <ItemGroup>
@@ -107,8 +113,11 @@
   <ItemGroup>
     <None Include="Resources\icons8-export-excel-96.png" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <None Include="Resources\Logo.png" />
   </ItemGroup>
+=======
+>>>>>>> 4c07c304ad03f865dcde11fdc90d95de7fbccfdd
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

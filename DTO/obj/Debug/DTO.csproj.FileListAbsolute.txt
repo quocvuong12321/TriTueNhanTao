@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 D:\TriTueNhanTao\DTO\bin\Debug\DTO.dll
 D:\TriTueNhanTao\DTO\bin\Debug\DTO.pdb
 D:\TriTueNhanTao\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
 D:\TriTueNhanTao\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\TriTueNhanTao\DTO\obj\Debug\DTO.dll
 D:\TriTueNhanTao\DTO\obj\Debug\DTO.pdb
+=======
+C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\DTO\bin\Debug\DTO.dll
+C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\DTO\bin\Debug\DTO.pdb
+C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\DTO\obj\Debug\DTO.dll
+C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\DTO\obj\Debug\DTO.pdb
+>>>>>>> 4c07c304ad03f865dcde11fdc90d95de7fbccfdd
