@@ -1,5 +1,0 @@
-C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\DTO\bin\Debug\DTO.dll
-C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\DTO\bin\Debug\DTO.pdb
-C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
-C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\DTO\obj\Debug\DTO.dll
-C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\DTO\obj\Debug\DTO.pdb
