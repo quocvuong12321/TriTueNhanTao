@@ -1,137 +1,44 @@
-<<<<<<< HEAD
-D:\TriTueNhanTao\GUI\bin\Debug\GUI.exe.config
-D:\TriTueNhanTao\GUI\bin\Debug\GUI.exe
-D:\TriTueNhanTao\GUI\bin\Debug\GUI.pdb
-D:\TriTueNhanTao\GUI\bin\Debug\BLL.dll
-D:\TriTueNhanTao\GUI\bin\Debug\DTO.dll
-D:\TriTueNhanTao\GUI\bin\Debug\DAL.dll
-D:\TriTueNhanTao\GUI\bin\Debug\ClosedXML.dll
-D:\TriTueNhanTao\GUI\bin\Debug\System.Memory.dll
-D:\TriTueNhanTao\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.dll
-D:\TriTueNhanTao\GUI\bin\Debug\DocumentFormat.OpenXml.dll
-D:\TriTueNhanTao\GUI\bin\Debug\SixLabors.Fonts.dll
-D:\TriTueNhanTao\GUI\bin\Debug\ExcelNumberFormat.dll
-D:\TriTueNhanTao\GUI\bin\Debug\ClosedXML.Parser.dll
-D:\TriTueNhanTao\GUI\bin\Debug\Microsoft.Bcl.HashCode.dll
-D:\TriTueNhanTao\GUI\bin\Debug\System.Buffers.dll
-D:\TriTueNhanTao\GUI\bin\Debug\RBush.dll
-D:\TriTueNhanTao\GUI\bin\Debug\System.Numerics.Vectors.dll
-D:\TriTueNhanTao\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\TriTueNhanTao\GUI\bin\Debug\BLL.pdb
-D:\TriTueNhanTao\GUI\bin\Debug\BLL.dll.config
-D:\TriTueNhanTao\GUI\bin\Debug\DTO.pdb
-D:\TriTueNhanTao\GUI\bin\Debug\DAL.pdb
-D:\TriTueNhanTao\GUI\bin\Debug\DAL.dll.config
-D:\TriTueNhanTao\GUI\bin\Debug\ClosedXML.pdb
-D:\TriTueNhanTao\GUI\bin\Debug\ClosedXML.xml
-D:\TriTueNhanTao\GUI\bin\Debug\System.Memory.xml
-D:\TriTueNhanTao\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.xml
-D:\TriTueNhanTao\GUI\bin\Debug\DocumentFormat.OpenXml.xml
-D:\TriTueNhanTao\GUI\bin\Debug\SixLabors.Fonts.xml
-D:\TriTueNhanTao\GUI\bin\Debug\ExcelNumberFormat.xml
-D:\TriTueNhanTao\GUI\bin\Debug\ClosedXML.Parser.xml
-D:\TriTueNhanTao\GUI\bin\Debug\Microsoft.Bcl.HashCode.xml
-D:\TriTueNhanTao\GUI\bin\Debug\System.Buffers.xml
-D:\TriTueNhanTao\GUI\bin\Debug\RBush.xml
-D:\TriTueNhanTao\GUI\bin\Debug\System.Numerics.Vectors.xml
-D:\TriTueNhanTao\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\TriTueNhanTao\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-D:\TriTueNhanTao\GUI\obj\Debug\GUI.frm_XepLich.resources
-D:\TriTueNhanTao\GUI\obj\Debug\GUI.Properties.Resources.resources
-D:\TriTueNhanTao\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
-D:\TriTueNhanTao\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-D:\TriTueNhanTao\GUI\obj\Debug\GUI.csproj.CopyComplete
-D:\TriTueNhanTao\GUI\obj\Debug\GUI.exe
-D:\TriTueNhanTao\GUI\obj\Debug\GUI.pdb
-=======
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\GUI.exe.config
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\GUI.exe
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\GUI.pdb
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\BLL.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DTO.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DAL.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ClosedXML.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Memory.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DocumentFormat.OpenXml.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\SixLabors.Fonts.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ExcelNumberFormat.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ClosedXML.Parser.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\Microsoft.Bcl.HashCode.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Buffers.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\RBush.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\BLL.pdb
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\BLL.dll.config
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DTO.pdb
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DAL.pdb
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DAL.dll.config
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ClosedXML.pdb
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ClosedXML.xml
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Memory.xml
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.xml
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DocumentFormat.OpenXml.xml
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\SixLabors.Fonts.xml
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ExcelNumberFormat.xml
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ClosedXML.Parser.xml
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\Microsoft.Bcl.HashCode.xml
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Buffers.xml
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\RBush.xml
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.frm_XepLich.resources
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.Properties.Resources.resources
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.csproj.CopyComplete
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.exe
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.pdb
-C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\Images\logo.png
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\Images\logo.png
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\GUI.exe.config
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\GUI.exe
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\GUI.pdb
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\BLL.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DTO.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DAL.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ClosedXML.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Memory.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DocumentFormat.OpenXml.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\SixLabors.Fonts.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ExcelNumberFormat.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ClosedXML.Parser.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\Microsoft.Bcl.HashCode.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Buffers.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\RBush.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\BLL.pdb
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\BLL.dll.config
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DTO.pdb
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DAL.pdb
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DAL.dll.config
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ClosedXML.pdb
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ClosedXML.xml
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Memory.xml
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.xml
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\DocumentFormat.OpenXml.xml
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\SixLabors.Fonts.xml
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ExcelNumberFormat.xml
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\ClosedXML.Parser.xml
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\Microsoft.Bcl.HashCode.xml
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Buffers.xml
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\RBush.xml
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.frm_XepLich.resources
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.Properties.Resources.resources
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.csproj.CopyComplete
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.exe
-C:\Users\King\OneDrive\Máy tính\TriTueNhanTao-main\TriTueNhanTao-main\GUI\obj\Debug\GUI.pdb
->>>>>>> 4c07c304ad03f865dcde11fdc90d95de7fbccfdd
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\GUI.exe.config
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\GUI.exe
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\GUI.pdb
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\BLL.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\DTO.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\DAL.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\ClosedXML.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\System.Memory.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\SixLabors.Fonts.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\ExcelNumberFormat.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\ClosedXML.Parser.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\System.Buffers.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\RBush.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\BLL.pdb
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\BLL.dll.config
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\DTO.pdb
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\DAL.pdb
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\DAL.dll.config
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\ClosedXML.pdb
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\ClosedXML.xml
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\System.Memory.xml
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\DocumentFormat.OpenXml.Framework.xml
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\SixLabors.Fonts.xml
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\ExcelNumberFormat.xml
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\ClosedXML.Parser.xml
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\System.Buffers.xml
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\RBush.xml
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\obj\Debug\GUI.frm_XepLich.resources
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\obj\Debug\GUI.exe
+C:\Users\King\OneDrive\Máy tính\New folder\ttnt2\TriTueNhanTao\GUI\obj\Debug\GUI.pdb

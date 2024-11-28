@@ -45,13 +45,9 @@ namespace DAL
 
                             if (!string.IsNullOrEmpty(getvaluelastdate))
                             {
-<<<<<<< HEAD
-                                lastDate = DateTime.Parse(getvaluelastdate);
-=======
-                                //lastDate = DateTime.Parse(getvaluelastdate);
+                              //lastDate = DateTime.Parse(getvaluelastdate);
                                 lastDate = Convert.ToDateTime(getvaluelastdate);
 
->>>>>>> 4c07c304ad03f865dcde11fdc90d95de7fbccfdd
                             }
                             string valueTiet = worksheet.Row(8).Cell(j).Value.ToString();
                             string[] arrTiet = valueTiet.Split(new string[] { "→" }, StringSplitOptions.None);

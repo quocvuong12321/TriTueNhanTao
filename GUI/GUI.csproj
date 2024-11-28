@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
@@ -71,6 +74,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -95,29 +99,12 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-<<<<<<< HEAD
-=======
-    <None Include="Resources\Logo.png" />
+    <Content Include="Resources\icons8-calendar-94.png" />
+    <Content Include="Resources\icons8-export-excel-96.png" />
+    <Content Include="Resources\icons8-lecturer-100.png" />
+    <Content Include="Resources\Logo.png" />
   </ItemGroup>
-  <ItemGroup>
->>>>>>> 4c07c304ad03f865dcde11fdc90d95de7fbccfdd
-    <None Include="Resources\icons8-lecturer-100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-calendar-94.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-calendar-94 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-export-excel-96.png" />
-  </ItemGroup>
-<<<<<<< HEAD
-  <ItemGroup>
-    <None Include="Resources\Logo.png" />
-  </ItemGroup>
-=======
->>>>>>> 4c07c304ad03f865dcde11fdc90d95de7fbccfdd
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

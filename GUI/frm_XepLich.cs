@@ -55,8 +55,6 @@ namespace GUI
         private void btn_LoadLichThi_Click(object sender, EventArgs e)
         {
             string path = DocFileDialog(ofd_DocFile);
-            txt_Path.Clear();
-            txt_Path.Text = path;
             lstLichThi = ltBLL.DocFileLichThi(path);
             dgv_XepLich.DataSource = null;
             dgv_XepLich.DataSource = lstLichThi;
@@ -67,8 +65,6 @@ namespace GUI
         private void btn_LoadGiangVien_Click(object sender, EventArgs e)
         {
             string path = DocFileDialog(ofd_DocFile);
-            txt_Path.Clear();
-            txt_Path.Text = path;
             lstGiangVien = gvBLL.LoadFileGiangVien(path);
             dgv_XepLich.DataSource = null;
             dgv_XepLich.DataSource = lstGiangVien;
@@ -162,6 +158,11 @@ namespace GUI
                     MessageBox.Show($"Đã xuất file Excel thành công tại {filePath}");
                 }
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
