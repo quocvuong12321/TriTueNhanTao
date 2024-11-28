@@ -1,0 +1,6 @@
+C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\DTO\bin\Debug\DTO.dll
+C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\DTO\bin\Debug\DTO.pdb
+C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\DTO\obj\Debug\DTO.dll
+C:\Users\LAPTOP LENOVO\OneDrive\Desktop\TriTueNhanTao-main\TriTueNhanTao-main\DTO\obj\Debug\DTO.pdb
