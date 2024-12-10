@@ -15,7 +15,11 @@ namespace DAL
             using (var workbook = new XLWorkbook(path))
             {
                 var worksheet = workbook.Worksheet(1);
-                for (int colIndex = 5; colIndex <= worksheet.ColumnsUsed().Count() ; colIndex++)
+                int colIndex;
+                int lastColumn = worksheet.LastColumnUsed().ColumnNumber();
+                //int solgcot = worksheet.ColumnsUsed().Count();
+
+                for ( colIndex = 5; colIndex <= lastColumn ; colIndex++)
                 {
 
                     var column = worksheet.Column(colIndex);

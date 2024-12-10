@@ -28,6 +28,7 @@ namespace DAL
                     .Where(gv => gv.KiemTraTrungLichThi(lichthi) == false)
                     .OrderBy(gv => gv.LichGacThi.Count())
                     .ThenBy(gv => gv.GetKhoangCachGanNhat(lichthi))
+                    .ThenBy(gv => gv.LichDay.Count())
                     .ToList();
 
                 var ketqua = new LichThiXepResult(lichthi);

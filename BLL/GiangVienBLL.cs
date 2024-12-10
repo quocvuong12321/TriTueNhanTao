@@ -10,9 +10,9 @@ namespace BLL
     public class GiangVienBLL
     {
         GiangVienDAL gvDAL = new GiangVienDAL();
-        public List<GiangVienDTO> LoadFileGiangVien(string path)
+        public void LoadFileGiangVien(string path, List<GiangVienDTO> lstGiangVien)
         {
-            return gvDAL.LoadFileGiangVien(path);
+           gvDAL.LoadFileGiangVien(path,lstGiangVien) ;
         }
     }
 }

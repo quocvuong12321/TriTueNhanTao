@@ -23,9 +23,16 @@ namespace DAL
                 var worksheet = workbook.Worksheets.Add("Lich Gac Thi");
 
                 // Thêm logo
-                var picture = worksheet.AddPicture(logoPath)
-                    .MoveTo(worksheet.Cell(1, 1)) // Di chuyển ảnh tới ô A1
-                    .Scale(0.8); // Thay đổi kích thước logo
+                try
+                {
+                    var picture = worksheet.AddPicture(logoPath)
+                        .MoveTo(worksheet.Cell(1, 1)) // Di chuyển ảnh tới ô A1
+                        .Scale(0.8); // Thay đổi kích thước logo
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi thêm ảnh: " + ex.Message);
+                }
 
                 // Tạo tiêu đề lớn (mô phỏng text box bằng cách merge cells)
                 worksheet.Range(1, 2, 3, 14).Merge(); // Merge ngang
@@ -73,6 +80,11 @@ namespace DAL
                 int startCol = 3;
                 string previousDate = "";
                 int mergeStartCol = startCol;
+
+                int tongCaCanCap = lstLichThi.Sum(t=>t.SoGVCanCap);
+                int tongCaDaCap = 0;
+                int tongCaChuaCap = 0;
+
 
                 for (int i = 0; i < uniqueColumns.Count; i++)
                 {
@@ -126,6 +138,8 @@ namespace DAL
                     worksheet.Cell(14, startCol + i).Value = soCaDaCap;
                     worksheet.Cell(15, startCol + i).Value = Math.Abs(soCaChuaCap);
 
+                    tongCaDaCap += soCaDaCap;
+                    tongCaChuaCap += soCaChuaCap;
                     // Căn giữa và thêm border cho các dữ liệu cột
                     for (int k = 13; k <= 15; k++)
                     {
@@ -134,6 +148,16 @@ namespace DAL
                             .Border.SetOutsideBorder(XLBorderStyleValues.Thin);
                     }
                 }
+                worksheet.Cell(13, 2).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center)
+                       .Alignment.SetVertical(XLAlignmentVerticalValues.Center);
+                worksheet.Cell(14, 2).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center)
+                        .Alignment.SetVertical(XLAlignmentVerticalValues.Center);
+                worksheet.Cell(15, 2).Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center)
+                        .Alignment.SetVertical(XLAlignmentVerticalValues.Center);
+
+                worksheet.Cell(13, 2).Value = tongCaCanCap;
+                worksheet.Cell(14, 2).Value = tongCaDaCap;
+                worksheet.Cell(15, 2).Value = tongCaChuaCap;
 
                 // Tăng chiều rộng cột sau khi thiết lập các tiêu đề cột
                 for (int col = 2; col <= uniqueColumns.Count + 1; col++) // Bắt đầu từ cột 2 (Cột đầu tiên là "Ngày thi")
@@ -166,7 +190,13 @@ namespace DAL
                             .Alignment.SetVertical(XLAlignmentVerticalValues.Center)
                             .Border.SetOutsideBorder(XLBorderStyleValues.Thin);
                     }
+
+
                 }
+
+                
+
+
 
                 //worksheet.Columns().AdjustToContents();
 

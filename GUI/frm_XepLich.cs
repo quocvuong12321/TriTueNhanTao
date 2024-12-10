@@ -27,7 +27,7 @@ namespace GUI
         {
             InitializeComponent();
             lstLichThi = new List<LichThiDTO>();
-
+            lstGiangVien = new List<GiangVienDTO>();
         }
 
         private void frm_XepLich_Load(object sender, EventArgs e)
@@ -60,12 +60,13 @@ namespace GUI
             dgv_XepLich.DataSource = lstLichThi;
             MessageBox.Show("Thành công");
 
+
         }
 
         private void btn_LoadGiangVien_Click(object sender, EventArgs e)
         {
             string path = DocFileDialog(ofd_DocFile);
-            lstGiangVien = gvBLL.LoadFileGiangVien(path);
+            gvBLL.LoadFileGiangVien(path,lstGiangVien);
             dgv_XepLich.DataSource = null;
             dgv_XepLich.DataSource = lstGiangVien;
             MessageBox.Show("Thành công");
@@ -73,6 +74,18 @@ namespace GUI
 
         private void btn_XepLich_Click(object sender, EventArgs e)
         {
+
+            if (lstGiangVien.Count == 0)
+            {
+                MessageBox.Show("Chưa có giảng viên để xếp lịch");
+                return;
+            }
+            if (lstLichThi.Count == 0)
+            {
+                MessageBox.Show("Chưa có lịch thi để xếp");
+                return;
+            }
+
             List<LichThiDTO> dsLichThi = lstLichThi
                 .Select(lich => new LichThiDTO(lich.Ngay, lich.TietBatDau, lich.TietKetThuc, lich.SoGVCanCap))
                 .ToList(); 
@@ -163,6 +176,16 @@ namespace GUI
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_XepLai_Click(object sender, EventArgs e)
+        {
+            lstGiangVien.Clear();
+            lstLichThi.Clear();
+            dgv_XepLich.DataSource = null;
+            dgv_XepLich.Columns.Clear();
+            dgv_XepLich.Rows.Clear();
+            MessageBox.Show("Xác nhận xếp lại");
         }
     }
 }

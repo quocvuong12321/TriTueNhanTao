@@ -43,6 +43,7 @@ namespace GUI
             this.btn_XepLich = new System.Windows.Forms.Button();
             this.btn_LoadLichThi = new System.Windows.Forms.Button();
             this.btn_LoadGiangVien = new System.Windows.Forms.Button();
+            this.btn_XepLai = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_XepLich)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,7 @@ namespace GUI
             this.dgv_XepLich.RowHeadersWidth = 51;
             this.dgv_XepLich.RowTemplate.Height = 24;
             this.dgv_XepLich.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_XepLich.Size = new System.Drawing.Size(1348, 571);
+            this.dgv_XepLich.Size = new System.Drawing.Size(1348, 584);
             this.dgv_XepLich.TabIndex = 4;
             // 
             // ofd_DocFile
@@ -67,6 +68,7 @@ namespace GUI
             // 
             // txt_Diem
             // 
+            this.txt_Diem.Enabled = false;
             this.txt_Diem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Diem.Location = new System.Drawing.Point(438, 909);
             this.txt_Diem.Name = "txt_Diem";
@@ -173,11 +175,23 @@ namespace GUI
             this.btn_LoadGiangVien.UseVisualStyleBackColor = true;
             this.btn_LoadGiangVien.Click += new System.EventHandler(this.btn_LoadGiangVien_Click);
             // 
+            // btn_XepLai
+            // 
+            this.btn_XepLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XepLai.Location = new System.Drawing.Point(1606, 888);
+            this.btn_XepLai.Name = "btn_XepLai";
+            this.btn_XepLai.Size = new System.Drawing.Size(180, 59);
+            this.btn_XepLai.TabIndex = 11;
+            this.btn_XepLai.Text = "Xếp lại";
+            this.btn_XepLai.UseVisualStyleBackColor = true;
+            this.btn_XepLai.Click += new System.EventHandler(this.btn_XepLai_Click);
+            // 
             // frm_XepLich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1819, 975);
+            this.Controls.Add(this.btn_XepLai);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
@@ -213,5 +227,6 @@ namespace GUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_XepLai;
     }
 }
