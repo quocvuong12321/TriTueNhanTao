@@ -15,6 +15,12 @@ namespace DTO
             LichThi = lichThi;
             GiangViens = new List<GiangVienDTO>();
         }
+
+        public LichThiXepResult(LichThiDTO lt, List<GiangVienDTO> lstGV)
+        {
+            LichThi = lt;
+            GiangViens = lstGV;
+        }
        
     }
 }

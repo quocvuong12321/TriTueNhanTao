@@ -171,5 +171,67 @@ namespace DAL
             // Nếu không thể xếp lịch cho ca thi này với bất kỳ giảng viên nào, trả về false
             return false;
         }
+
+
+        //Test di truyền
+        private void DotBien(List<LichThiXepResult> ketquaxeplich, List<GiangVienDTO> LstGiangVien, int soDotBien = 50)
+        {
+            Random rand = new Random();
+            for (int i = 0; i < soDotBien; i++)
+            {
+                // Chọn ngẫu nhiên một lịch thi trong danh sách
+                var randomLich = ketquaxeplich[rand.Next(ketquaxeplich.Count)];
+
+                // Chọn ngẫu nhiên một giảng viên hiện tại
+                if (randomLich.GiangViens.Count > 0)
+                {
+                    var randomGV = randomLich.GiangViens[rand.Next(randomLich.GiangViens.Count)];
+
+                    // Lấy danh sách giảng viên thay thế
+                    var giangVienThayThe = LstGiangVien
+                        .Where(gv => gv.KiemTraTrungLichDay(randomLich.LichThi) == false)
+                        .Where(gv => gv.KiemTraTrungLichThi(randomLich.LichThi) == false)
+                        .Where(gv => !randomLich.GiangViens.Contains(gv)) // Không trùng với giảng viên hiện tại
+                        .OrderBy(gv => gv.LichGacThi.Count) // Ưu tiên giảng viên ít lịch
+                        .FirstOrDefault();
+
+                    // Thay thế nếu tìm được giảng viên phù hợp
+                    if (giangVienThayThe != null)
+                    {
+                        randomLich.GiangViens.Remove(randomGV);
+                        randomLich.GiangViens.Add(giangVienThayThe);
+
+                        // Cập nhật trạng thái lịch gác thi của giảng viên
+                        randomGV.LichGacThi.Remove(randomLich.LichThi);
+                        giangVienThayThe.ThemLichGacThi(randomLich.LichThi);
+                    }
+                }
+            }
+        }
+
+
+        public void CaiTienKetQua(List<LichThiXepResult> ketquaxeplich, List<GiangVienDTO> LstGiangVien, int soTheHe = 100)
+        {
+            int bestScore = DanhGiaLichThi(ketquaxeplich);
+
+            for (int i = 0; i < soTheHe; i++)
+            {
+                // Sao lưu kết quả hiện tại
+                var cloneKetQua = ketquaxeplich.Select(t => new LichThiXepResult(t.LichThi,t.GiangViens)).ToList();
+
+                // Áp dụng đột biến
+                DotBien(cloneKetQua, LstGiangVien);
+
+                // Tính điểm fitness sau khi đột biến
+                int newScore = DanhGiaLichThi(cloneKetQua);
+
+                // Nếu kết quả mới tốt hơn, chấp nhận thay đổi
+                if (newScore < bestScore)
+                {
+                    ketquaxeplich = cloneKetQua;
+                    bestScore = newScore;
+                }
+            }
+        }
     }
 }

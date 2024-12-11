@@ -18,6 +18,7 @@ namespace GUI
         GiangVienBLL gvBLL = new GiangVienBLL();
         public List<LichThiDTO> lstLichThi;
         public List<GiangVienDTO> lstGiangVien;
+        List<LichThiXepResult> lstKqXep;
 
 
         private List<string> Uniquecolumns;
@@ -28,6 +29,7 @@ namespace GUI
             InitializeComponent();
             lstLichThi = new List<LichThiDTO>();
             lstGiangVien = new List<GiangVienDTO>();
+            lstKqXep = new List<LichThiXepResult>();
         }
 
         private void frm_XepLich_Load(object sender, EventArgs e)
@@ -88,9 +90,17 @@ namespace GUI
 
             List<LichThiDTO> dsLichThi = lstLichThi
                 .Select(lich => new LichThiDTO(lich.Ngay, lich.TietBatDau, lich.TietKetThuc, lich.SoGVCanCap))
-                .ToList(); 
-            List<LichThiXepResult> lstKqXep = xlBLL.xepLichGacThi(dsLichThi, lstGiangVien);
-            ketquaxep = xlBLL.chuyenDoiXepLichSangMang(lstKqXep, lstGiangVien);
+                .ToList();
+            List<GiangVienDTO> dsGV = lstGiangVien
+                .ToList();
+
+            lstKqXep = xlBLL.xepLichGacThi(dsLichThi, dsGV);
+
+            txt_Diem.Clear();
+            txt_Diem.Text = XepLichBLL.DanhGiaLichThi(lstKqXep).ToString() + " Điểm";
+
+
+            ketquaxep = xlBLL.chuyenDoiXepLichSangMang(lstKqXep, dsGV);
             Uniquecolumns = lstKqXep.
                 OrderBy(t => t.LichThi.Ngay).ThenBy(t => t.LichThi.TietBatDau).
                 Select(kq => string.Format("{0:dd/MM/yyyy} {1}-{2}", kq.LichThi.Ngay, kq.LichThi.TietBatDau, kq.LichThi.TietKetThuc)).
@@ -100,8 +110,7 @@ namespace GUI
             dgv_XepLich.DataSource = null;
             HienThiLichThiTrenDataGridView(dgv_XepLich, ketquaxep, lstGiangVien, Uniquecolumns);
 
-            txt_Diem.Clear();
-            txt_Diem.Text = XepLichBLL.DanhGiaLichThi(lstKqXep).ToString() + " Điểm";
+           
 
             if(xlBLL.LayDanhSachLichChuaXep().Count() > 0)
             {
@@ -173,19 +182,38 @@ namespace GUI
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_XepLai_Click(object sender, EventArgs e)
         {
             lstGiangVien.Clear();
             lstLichThi.Clear();
+            lstKqXep.Clear();
             dgv_XepLich.DataSource = null;
             dgv_XepLich.Columns.Clear();
             dgv_XepLich.Rows.Clear();
             MessageBox.Show("Xác nhận xếp lại");
+        }
+
+        private void btn_ToiUu_Click(object sender, EventArgs e)
+        {
+            List<GiangVienDTO> dsGV1 = lstGiangVien
+                //.Select(gv => new GiangVienDTO(gv.TenGiangVien, gv.LichDay))
+                .ToList();
+            xlBLL.CaiTienKetQua(lstKqXep, dsGV1);
+
+            txt_DiemDotBien.Clear();
+            txt_DiemDotBien.Text = XepLichBLL.DanhGiaLichThi(lstKqXep).ToString() + " Điểm";
+
+            ketquaxep = xlBLL.chuyenDoiXepLichSangMang(lstKqXep, dsGV1);
+            Uniquecolumns = lstKqXep.
+                OrderBy(t => t.LichThi.Ngay).ThenBy(t => t.LichThi.TietBatDau).
+                Select(kq => string.Format("{0:dd/MM/yyyy} {1}-{2}", kq.LichThi.Ngay, kq.LichThi.TietBatDau, kq.LichThi.TietKetThuc)).
+                Distinct().
+                ToList();
+
+            dgv_XepLich.DataSource = null;
+            HienThiLichThiTrenDataGridView(dgv_XepLich, ketquaxep, lstGiangVien, Uniquecolumns);
+            //lstGiangVien = dsGV1.ToList();
         }
     }
 }

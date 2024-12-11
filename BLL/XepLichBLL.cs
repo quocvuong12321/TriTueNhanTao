@@ -28,5 +28,10 @@ namespace BLL
         {
             return xlDAL.LayDanhSachLichChuaXep();
         }
+
+        public void CaiTienKetQua(List<LichThiXepResult> ketquaxeplich, List<GiangVienDTO> LstGiangVien, int soVongLap = 10)
+        {
+            xlDAL.CaiTienKetQua(ketquaxeplich, LstGiangVien, soVongLap);
+        }
     }
 }

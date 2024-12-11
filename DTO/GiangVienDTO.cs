@@ -25,6 +25,20 @@ namespace DTO
             LichGacThi = new List<LichThiDTO>();
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj is GiangVienDTO other)
+            {
+                return this.TenGiangVien == other.TenGiangVien;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return TenGiangVien.GetHashCode();
+        }
+
         public bool KiemTraTrungLichDay(LichThiDTO lt)
         {
             foreach (var lichday in LichDay)
@@ -102,8 +116,8 @@ namespace DTO
                 }
             }
 
-            // Tổng hợp khoảng cách, với trọng số ngày (10) để ưu tiên khoảng cách theo ngày
-            return ngayKhoangCach * 5 + tietKhoangCach;
+            // Tổng hợp khoảng cách, với trọng số ngày để ưu tiên khoảng cách theo ngày
+            return ngayKhoangCach*2 + tietKhoangCach;
         }
 
         public int GetKhoangCachGanNhat(LichThiDTO lichthiMoi)
