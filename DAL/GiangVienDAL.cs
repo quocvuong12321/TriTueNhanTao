@@ -18,8 +18,8 @@ namespace DAL
 
             if(String.IsNullOrEmpty(path))
             {
-                throw new ArgumentNullException("Đường dẫn không hợp lệ");
-
+                return;
+                //throw new ArgumentNullException("Đường dẫn không hợp lệ");
             }
 
             using (var workbook = new XLWorkbook(path))

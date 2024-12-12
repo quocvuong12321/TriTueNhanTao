@@ -21,11 +21,9 @@ namespace DAL
             int Solichtoida = danhsachlichthi.Sum(t => t.SoGVCanCap) / LstGiangVien.Count() + 1;
             foreach (LichThiDTO lichthi in danhsachlichthi)
             {
-                //int sogvdaxep = 0;
                 //Chiến lượt sắp xếp heuristic cho giảng viên
                 var sortedgiangvien = LstGiangVien
-                    .Where(gv => gv.KiemTraTrungLichDay(lichthi) == false)
-                    .Where(gv => gv.KiemTraTrungLichThi(lichthi) == false)
+                    .Where(gv => gv.KiemTraTrungLichDay(lichthi) == false && gv.KiemTraTrungLichThi(lichthi)==false)
                     .OrderBy(gv => gv.LichGacThi.Count())
                     .ThenBy(gv => gv.GetKhoangCachGanNhat(lichthi))
                     .ThenBy(gv => gv.LichDay.Count())
@@ -37,7 +35,6 @@ namespace DAL
                     if (lichthi.SoGVCanCap == 0) break;
                     if (giangvien.ThemLichGacThi(lichthi, Solichtoida))
                     {
-                        //sogvdaxep++;
                         ketqua.GiangViens.Add(giangvien);
                         lichthi.SoGVCanCap--;
                     }
@@ -127,8 +124,6 @@ namespace DAL
             // Lọc giảng viên có thể xếp cho ca thi này
             var sortedGiangVien = LstGiangVien
                 .Where(gv => gv.KiemTraTrungLichDay(lichthi) == false && gv.KiemTraTrungLichThi(lichthi) == false)
-                //.OrderBy(gv => gv.LichGacThi.Count()) // Giảng viên ít lịch nhất sẽ được ưu tiên
-                //.ThenBy(gv => gv.GetKhoangCachGanNhat(lichthi)) // Chọn giảng viên gần nhất với ca thi
                 .ToList();
 
             // Thử từng giảng viên để xếp lịch
@@ -174,7 +169,7 @@ namespace DAL
 
 
         //Test di truyền
-        private void DotBien(List<LichThiXepResult> ketquaxeplich, List<GiangVienDTO> LstGiangVien, int soDotBien = 50)
+        private void DotBien(List<LichThiXepResult> ketquaxeplich, List<GiangVienDTO> LstGiangVien, int soDotBien = 45)
         {
             Random rand = new Random();
             for (int i = 0; i < soDotBien; i++)
@@ -210,7 +205,7 @@ namespace DAL
         }
 
 
-        public void CaiTienKetQua(List<LichThiXepResult> ketquaxeplich, List<GiangVienDTO> LstGiangVien, int soTheHe = 100)
+        public void CaiTienKetQua(List<LichThiXepResult> ketquaxeplich, List<GiangVienDTO> LstGiangVien, int soTheHe = 75)
         {
             int bestScore = DanhGiaLichThi(ketquaxeplich);
 

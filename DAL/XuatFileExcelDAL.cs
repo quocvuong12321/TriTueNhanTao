@@ -43,8 +43,6 @@ namespace DAL
                     .Font.SetBold(true)
                     .Font.FontSize = 18; // Chỉnh kích thước font
 
-                // Thêm border cho vùng tiêu đề
-                //worksheet.Range(1, 2, 3, 15).Style.Border.SetOutsideBorder(XLBorderStyleValues.Thin);
 
                 // Định dạng tiêu đề để không bị đè
                 worksheet.Row(1).Height = 35; // Tăng chiều cao hàng
@@ -165,7 +163,7 @@ namespace DAL
                     worksheet.Column(col).Width = 9; // Tăng chiều rộng cột
                 }
                 // Đặt chiều rộng cho cột A
-                worksheet.Column(1).Width = 20; // Đặt chiều rộng đủ lớn cho nội dung
+                worksheet.Column(1).Width = 25; // Đặt chiều rộng đủ lớn cho nội dung
 
 
                 // Dữ liệu giảng viên bắt đầu từ hàng 17
@@ -178,7 +176,6 @@ namespace DAL
                         .Alignment.SetVertical(XLAlignmentVerticalValues.Center)
                         .Border.SetOutsideBorder(XLBorderStyleValues.Thin);
                     worksheet.Cell(startRow + i, 1).Value = lstGiangVien[i].TenGiangVien;
-                    //.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center)
                     worksheet.Cell(startRow + i, 1).Style
                         .Alignment.SetVertical(XLAlignmentVerticalValues.Center)
                         .Border.SetOutsideBorder(XLBorderStyleValues.Thin);
@@ -193,13 +190,6 @@ namespace DAL
 
 
                 }
-
-                
-
-
-
-                //worksheet.Columns().AdjustToContents();
-
                 workbook.SaveAs(filePath);
 
                 return filePath;

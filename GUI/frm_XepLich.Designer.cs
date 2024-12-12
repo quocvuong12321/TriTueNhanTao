@@ -38,15 +38,15 @@ namespace GUI
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_XepLai = new System.Windows.Forms.Button();
+            this.txt_DiemDotBien = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btn_ToiUu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_XuatFileExcell = new System.Windows.Forms.Button();
             this.btn_XepLich = new System.Windows.Forms.Button();
             this.btn_LoadLichThi = new System.Windows.Forms.Button();
             this.btn_LoadGiangVien = new System.Windows.Forms.Button();
-            this.btn_XepLai = new System.Windows.Forms.Button();
-            this.txt_DiemDotBien = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btn_ToiUu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_XepLich)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -71,9 +71,10 @@ namespace GUI
             // 
             // txt_Diem
             // 
+            this.txt_Diem.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txt_Diem.Enabled = false;
             this.txt_Diem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Diem.Location = new System.Drawing.Point(438, 909);
+            this.txt_Diem.Location = new System.Drawing.Point(456, 909);
             this.txt_Diem.Name = "txt_Diem";
             this.txt_Diem.Size = new System.Drawing.Size(222, 38);
             this.txt_Diem.TabIndex = 5;
@@ -111,8 +112,51 @@ namespace GUI
             this.label3.TabIndex = 10;
             this.label3.Text = "XẾP LỊCH GÁC THI";
             // 
+            // btn_XepLai
+            // 
+            this.btn_XepLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XepLai.Location = new System.Drawing.Point(1606, 888);
+            this.btn_XepLai.Name = "btn_XepLai";
+            this.btn_XepLai.Size = new System.Drawing.Size(180, 59);
+            this.btn_XepLai.TabIndex = 11;
+            this.btn_XepLai.Text = "Xếp lại";
+            this.btn_XepLai.UseVisualStyleBackColor = true;
+            this.btn_XepLai.Click += new System.EventHandler(this.btn_XepLai_Click);
+            // 
+            // txt_DiemDotBien
+            // 
+            this.txt_DiemDotBien.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txt_DiemDotBien.Enabled = false;
+            this.txt_DiemDotBien.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DiemDotBien.Location = new System.Drawing.Point(787, 909);
+            this.txt_DiemDotBien.Name = "txt_DiemDotBien";
+            this.txt_DiemDotBien.Size = new System.Drawing.Size(222, 38);
+            this.txt_DiemDotBien.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(787, 864);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(211, 32);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Điểm sau tối ưu";
+            // 
+            // btn_ToiUu
+            // 
+            this.btn_ToiUu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ToiUu.Location = new System.Drawing.Point(1362, 888);
+            this.btn_ToiUu.Name = "btn_ToiUu";
+            this.btn_ToiUu.Size = new System.Drawing.Size(180, 59);
+            this.btn_ToiUu.TabIndex = 14;
+            this.btn_ToiUu.Text = "Tối ưu hoá";
+            this.btn_ToiUu.UseVisualStyleBackColor = true;
+            this.btn_ToiUu.Click += new System.EventHandler(this.btn_ToiUu_Click);
+            // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.ErrorImage = null;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(97, 20);
@@ -177,47 +221,6 @@ namespace GUI
             this.btn_LoadGiangVien.UseVisualStyleBackColor = true;
             this.btn_LoadGiangVien.Click += new System.EventHandler(this.btn_LoadGiangVien_Click);
             // 
-            // btn_XepLai
-            // 
-            this.btn_XepLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XepLai.Location = new System.Drawing.Point(1606, 888);
-            this.btn_XepLai.Name = "btn_XepLai";
-            this.btn_XepLai.Size = new System.Drawing.Size(180, 59);
-            this.btn_XepLai.TabIndex = 11;
-            this.btn_XepLai.Text = "Xếp lại";
-            this.btn_XepLai.UseVisualStyleBackColor = true;
-            this.btn_XepLai.Click += new System.EventHandler(this.btn_XepLai_Click);
-            // 
-            // txt_DiemDotBien
-            // 
-            this.txt_DiemDotBien.Enabled = false;
-            this.txt_DiemDotBien.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_DiemDotBien.Location = new System.Drawing.Point(793, 909);
-            this.txt_DiemDotBien.Name = "txt_DiemDotBien";
-            this.txt_DiemDotBien.Size = new System.Drawing.Size(222, 38);
-            this.txt_DiemDotBien.TabIndex = 12;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(778, 865);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(287, 32);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Điểm sau khi đột biến";
-            // 
-            // btn_ToiUu
-            // 
-            this.btn_ToiUu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ToiUu.Location = new System.Drawing.Point(1362, 888);
-            this.btn_ToiUu.Name = "btn_ToiUu";
-            this.btn_ToiUu.Size = new System.Drawing.Size(180, 59);
-            this.btn_ToiUu.TabIndex = 14;
-            this.btn_ToiUu.Text = "Tối ưu hoá";
-            this.btn_ToiUu.UseVisualStyleBackColor = true;
-            this.btn_ToiUu.Click += new System.EventHandler(this.btn_ToiUu_Click);
-            // 
             // frm_XepLich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -259,12 +262,12 @@ namespace GUI
         private System.Windows.Forms.TextBox txt_Diem;
         private System.Windows.Forms.Button btn_XuatFileExcell;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_XepLai;
         private System.Windows.Forms.TextBox txt_DiemDotBien;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_ToiUu;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -12,12 +12,17 @@ namespace DAL
         public List<LichThiDTO> DocFileLichThi(string path)
         {
             List<LichThiDTO> lstLichThi = new List<LichThiDTO>();
-            using (var workbook = new XLWorkbook(path))
+            if (String.IsNullOrEmpty(path))
+            {
+                return new List<LichThiDTO>();
+            }
+                using (var workbook = new XLWorkbook(path))
             {
                 var worksheet = workbook.Worksheet(1);
                 int colIndex;
                 int lastColumn = worksheet.LastColumnUsed().ColumnNumber();
                 //int solgcot = worksheet.ColumnsUsed().Count();
+
 
                 for ( colIndex = 5; colIndex <= lastColumn ; colIndex++)
                 {
