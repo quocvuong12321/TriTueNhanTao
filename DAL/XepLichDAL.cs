@@ -100,7 +100,7 @@ namespace DAL
                     tongDiem += diemDanhGia;
                 }
             }
-            return tongDiem; // Điểm càng thấp càng tốt
+            return tongDiem; 
         }
 
         public List<LichThiDTO> LayDanhSachLichChuaXep()
@@ -169,7 +169,7 @@ namespace DAL
 
 
         //Test di truyền
-        private void DotBien(List<LichThiXepResult> ketquaxeplich, List<GiangVienDTO> LstGiangVien, int soDotBien = 45)
+        private void DotBien(List<LichThiXepResult> ketquaxeplich, List<GiangVienDTO> LstGiangVien, int soDotBien = 30)
         {
             Random rand = new Random();
             for (int i = 0; i < soDotBien; i++)
